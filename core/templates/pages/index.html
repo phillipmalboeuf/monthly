@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block body_classes %}index{% endblock %}
+
+
+{% block main %}
+<section class="grid grid--vertically_spaced main__full text_center">
+	<div class="col col--12of12 padded"></div>
+
+	<div class="col col--12of12" data-piece-id="{{pieces.metadata._id}}">
+		<h1 class="flat_bottom" data-key="title">{{pieces.metadata.title}}</h1>
+
+		<span data-piece-admin></span>
+	</div>
+
+	<div class="col col--12of12 padded" data-piece-id="{{pieces.index._id}}">
+		<div class="grid grid--guttered">
+			<div class="col col--3of12 col--small--12of12">
+				<h2 class="flat_bottom"><span data-key="barber_1">{{pieces.index.barber_1}}</span></h2>
+				<p><a href="{{pieces.index.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.index.barber_1_address}}</span></a></p>
+				<button data-show-setster="1">Prendre rendez-vous</button>
+				<div data-hidden-key="barber_1_locations"></div>
+				<div data-hidden-key="barber_1_providers"></div>
+			</div>
+
+			<div class="col col--3of12 col--small--12of12">
+				<h2 class="flat_bottom"><span data-key="barber_2">{{pieces.index.barber_2}}</span></h2>
+				<p><a href="{{pieces.index.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.index.barber_2_address}}</span></a></p>
+				<button data-show-setster="2">Prendre rendez-vous</button>
+				<div data-hidden-key="barber_2_locations"></div>
+				<div data-hidden-key="barber_2_providers"></div>
+			</div>
+
+			<div class="col col--3of12 col--small--12of12">
+				<h2 class="flat_bottom"><span data-key="barber_3">{{pieces.index.barber_3}}</span></h2>
+				<p><a href="{{pieces.index.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.index.barber_3_address}}</span></a></p>
+				<button data-show-setster="3">Prendre rendez-vous</button>
+				<div data-hidden-key="barber_3_locations"></div>
+				<div data-hidden-key="barber_3_providers"></div>
+			</div>
+
+			<div class="col col--3of12 col--small--12of12">
+				<h2 class="flat_bottom"><span data-key="contact">{{pieces.index.contact}}</span></h2>
+				<p><span data-key="contact_info">{{pieces.index.contact_info}}</span></p>
+				<a href="{{pieces.index.contact_link}}" class="a--underline" data-link-key="contact_link"><span data-key="contact_label">{{pieces.index.contact_label}}</span></a>
+			</div>
+		</div>
+
+		<span data-piece-admin></span>
+	</div>
+</section>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Begin Setster Widget -->
+<script type="text/javascript" charset="utf-8">
+var is_ssl = ("https:" == document.location.protocol);
+var setsHost = is_ssl ? "https://www.setster.com/widget/" : "http://www.setster.com/widget/";
+document.write(unescape("%3Cscript src='" + setsHost + "js/setster_over.js?v=2' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+window.setster_1_options = {};
+setster_1_options.display = "overlay";  
+setster_1_options.uri = "frankandoak";
+setster_1_options.placement = "hidden";
+setster_1_options.buttonName = "appointment";
+setster_1_options.locationsMap = 1;
+setster_1_options.defaultProvider = "{{pieces.index.barber_1_providers}}";  
+setster_1_options.defaultLocation = "{{pieces.index.barber_1_locations}}";  
+setster_1_options.setsterURL = setsHost; 
+window.setster_1 = new Setster.setster_widget(setster_1_options);
+
+window.setster_2_options = {};
+setster_2_options.display = "overlay";  
+setster_2_options.uri = "frankandoak";
+setster_2_options.placement = "hidden";
+setster_2_options.buttonName = "appointment";
+setster_2_options.locationsMap = 1;
+setster_2_options.defaultProvider = "{{pieces.index.barber_2_providers}}";
+setster_2_options.defaultLocation = "{{pieces.index.barber_2_locations}}";
+setster_2_options.setsterURL = setsHost;
+window.setster_2 = new Setster.setster_widget(setster_2_options);
+
+window.setster_3_options = {};
+setster_3_options.display = "overlay";  
+setster_3_options.uri = "frankandoak";
+setster_3_options.placement = "hidden";
+setster_3_options.buttonName = "appointment";
+setster_3_options.locationsMap = 1;
+setster_3_options.defaultProvider = "{{pieces.index.barber_3_providers}}";
+setster_3_options.defaultLocation = "{{pieces.index.barber_3_locations}}";
+setster_3_options.setsterURL = setsHost;
+window.setster_3 = new Setster.setster_widget(setster_3_options);
+</script>
+<!-- End Setster Widget -->
+{% endblock %}
+
+

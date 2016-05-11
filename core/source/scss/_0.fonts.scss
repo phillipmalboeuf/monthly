@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'barbierregular';
+    src: url('/build/fonts/barbier-regular-webfont.woff2') format('woff2'),
+         url('/build/fonts/barbier-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'noto_sansbold';
+    src: url('/build/fonts/NotoSans-Bold-webfont.eot');
+    src: url('/build/fonts/NotoSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/build/fonts/NotoSans-Bold-webfont.woff') format('woff'),
+         url('/build/fonts/NotoSans-Bold-webfont.ttf') format('truetype'),
+         url('/build/fonts/NotoSans-Bold-webfont.svg#noto_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'noto_sansregular';
+    src: url('/build/fonts/NotoSans-Regular-webfont.eot');
+    src: url('/build/fonts/NotoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/build/fonts/NotoSans-Regular-webfont.woff') format('woff'),
+         url('/build/fonts/NotoSans-Regular-webfont.ttf') format('truetype'),
+         url('/build/fonts/NotoSans-Regular-webfont.svg#noto_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+

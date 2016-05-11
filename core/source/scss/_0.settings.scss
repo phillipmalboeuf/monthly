@@ -1,0 +1,54 @@
+
+// #COLORS
+
+$white: #fff;
+$black: #000;
+$red: #DD453E;
+$blue: #94A4A8;
+$blue--dark: #132B3A;
+$grey: #808080;
+$green: #2D4A1A;
+$yellow: #EBAB22;
+$orange: #E37A25;
+
+$primary: $black;
+$highlight: $blue;
+$secondary: $black;
+
+
+// #FONTS
+
+$body_font: "barbierregular", serif;
+$headings_font: "barbierregular", serif;
+$alternate_font: "noto_sansregular", sans-serif;
+$bold_font: "noto_sansbold", sans-serif;
+
+
+// #LAYOUT
+
+$base_size: 18px;
+$huge_size: 10rem;
+$big_size: 2rem;
+$line_height: 1.2;
+$vertical_rythm: 1rem;
+$letter_spacing: 0;
+$border_radius: 0;
+
+$number_of_columns: 12;
+$gutter: 1rem;
+$max_width: 1400px;
+
+
+// #ANIMATIONS
+
+$fast: 0.333s;
+$slow: 0.666s;
+$very_slow: 1.666s;
+
+
+// #BREAKPOINTS
+
+$small: "all and (max-device-width:750px), all and (max-width:750px)";
+$medium: "all and (max-device-width:1050px), all and (max-width:1050px)";
+$breakpoints: "medium" $medium, "small" $small;
+
