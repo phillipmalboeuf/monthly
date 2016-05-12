@@ -42,9 +42,12 @@ class Core.Views.Piece extends Core.View
 				link.removeAttribute("data-link-key")
 
 			this.$el.find("[data-hidden-key]").each (index, hidden)=>
+				content = @model.attributes.content[hidden.getAttribute("data-hidden-key")]
+
 				$(hidden).before this.piece_hidden_template({
 					key: hidden.getAttribute("data-hidden-key")
-					label: "Label"
+					label: content.label
+					value: content.value
 				})
 
 				hidden.removeAttribute("data-hidden-key")

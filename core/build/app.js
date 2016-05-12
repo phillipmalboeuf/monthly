@@ -952,9 +952,12 @@
         })(this));
         this.$el.find("[data-hidden-key]").each((function(_this) {
           return function(index, hidden) {
+            var content;
+            content = _this.model.attributes.content[hidden.getAttribute("data-hidden-key")];
             $(hidden).before(_this.piece_hidden_template({
               key: hidden.getAttribute("data-hidden-key"),
-              label: "Label"
+              label: content.label,
+              value: content.value
             }));
             return hidden.removeAttribute("data-hidden-key");
           };

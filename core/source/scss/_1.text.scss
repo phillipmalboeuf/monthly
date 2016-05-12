@@ -63,6 +63,10 @@ h1, h2, h3, h4, h5, h6 {
 
 	h1 {
 		font-size: $huge_size;
+
+		@media #{$small} {
+			font-size: $huge_size/2;
+		}
 	}
 
 	h2 {
