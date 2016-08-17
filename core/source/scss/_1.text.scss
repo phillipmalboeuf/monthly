@@ -28,7 +28,7 @@ body {
 	background-color: $grey;
 
 	&.index {
-		background-image: url("/build/images/back_1.jpg");
+		background-image: url("http://res.cloudinary.com/deming/image/upload/c_fill,g_auto/dpr_auto,w_auto/back_1.jpg");
 		background-size: cover;
 		background-position: center;
 	}

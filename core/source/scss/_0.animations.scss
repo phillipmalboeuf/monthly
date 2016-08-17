@@ -7,6 +7,12 @@
 	transform: $transform;
 }
 
+@mixin transform_origin($x, $y) {
+	-ms-transform-origin: $x $y;
+	-webkit-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
 @mixin translate($x, $y) {
 	@include transform(translate($x, $y));
 }

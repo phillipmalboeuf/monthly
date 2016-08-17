@@ -1,0 +1,31 @@
+
+
+// #SETSTER
+
+#setstr_container {
+	
+	@media #{$small} {
+		// max-width: 140% !important;
+		// margin: 0 !important;
+
+		@include transform(scale(0.5));
+		@include transform_origin(0, 0);
+	}
+}
+
+#setstr_iframe {
+	
+	@media #{$small} {
+		// max-width: 100% !important;
+		// margin: 0 !important;
+	}
+}
+
+#setstr_close {
+
+	// @media #{$small} {
+	// 	top: 0 !important;
+	// 	left: auto !important;
+	// 	right: 0;
+	// }
+}
