@@ -4,12 +4,22 @@
 
 ::-moz-selection {
 	color: $white;
-	background: $secondary;
+	background: $primary;
+
+	.black_back & {
+		color: $primary;
+		background: $white;
+	}
 }
 
 ::selection {
 	color: $white;
-	background: $secondary;
+	background: $primary;
+
+	.black_back & {
+		color: $primary;
+		background: $white;
+	}
 }
 
 
@@ -21,24 +31,25 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-webkit-tap-highlight-color: fade-out($primary, 0.8);
 	-moz-osx-font-smoothing: grayscale;
+
+	@media #{$medium} {
+		font-size: 12px;
+	}
 }
 
 body {
 	color: $primary;
-	background-color: $grey;
+	background-color: $white;
 
-	&.index {
-		background-image: url("http://res.cloudinary.com/deming/image/upload/c_fill,g_auto/dpr_auto,w_auto/back_1.jpg");
-		background-size: cover;
-		background-position: center;
-	}
+	// &.index {
+	// 	background-image: url("http://res.cloudinary.com/deming/image/upload/c_fill,g_auto/dpr_auto,w_auto/back_1.jpg");
+	// 	background-size: cover;
+	// 	background-position: center;
+	// }
 }
 
 .main {
 
-	.index & {
-		color: $white;
-	}
 }
 
 
@@ -64,25 +75,46 @@ h1, h2, h3, h4, h5, h6 {
 	h1 {
 		font-size: $huge_size;
 
-		@media #{$small} {
-			font-size: $huge_size/2;
+		@media #{$medium} {
+			font-size: $big_size;
+		}
+
+		&.h1--small {
+			font-size: $medium_size;
+		}
+
+		&.h1--alternate {
+			font-family: $alternate_font;
 		}
 	}
 
 	h2 {
 		font-size: $big_size;
-		font-family: $alternate_font;
+
+		&.h2--alternate {
+			font-family: $alternate_font;
+		}
+
+		@media #{$medium} {
+			font-size: $medium_size;
+		}
 	}
 
 	h3 {
-		font-size: $big_size;
+		font-size: $medium_size;
 	}
 
 	h4 {
-		font-size: $base_size;
+		font-size: $almost_size;
+		font-family: $alternate_font;
 	}
 	
-	h5, h6 {
+	h5 {
+		font-size: $slight_size;
+		font-family: $alternate_font;
+	}
+
+	h6 {
 		font-size: $base_size;
 	}
 
@@ -129,7 +161,14 @@ a {
 
 	&:focus,
 	&:hover {
-		color: $highlight;
+		border-bottom: 1px solid;
+	}
+
+	&.a--thick_line {
+		&:focus,
+		&:hover {
+			border-bottom: 2px solid;
+		}
 	}
 
 	&:active {
@@ -169,10 +208,14 @@ ol {
 
 hr {
 	border: none;
-	border-top: 1px solid $primary;
+	border-top: 2px solid $primary;
 
 	width: 100%;
-	margin: $vertical_rythm*2 auto;
+	margin: $vertical_rythm auto;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	.black_back & {
 		border-color: $white;
@@ -181,6 +224,7 @@ hr {
 
 
 // #BLOCKQUOTE
+
 blockquote {
 	font-style: italic;
 
@@ -199,6 +243,12 @@ blockquote {
 		top: 0;
 		left: 0;
 	}
+}
+
+// #FIGURE
+
+figure {
+	margin: 0;
 }
 
 // #PRE & #CODE
@@ -223,10 +273,50 @@ sub {
 
 
 // #COLORS
+
 .white { color: $white; }
 
 
+// #BACKGROUNDS
+
+.black_back {
+	color: $white;
+	background-color: $black;
+}
+
+.grey_back {
+	color: $primary;
+	background-color: $grey;
+}
+
+.white_back {
+	color: $primary;
+	background-color: $white;
+}
+
+.image_back {
+	background-size: cover;
+	background-position: center;
+
+	&.image_back--bottom {
+		background-position: center bottom;
+	}
+}
+
+
 // #MISC
+
+[class^="icon-"], [class*=" icon-"] {
+    height: $almost_size;
+    width: $almost_size;
+    display: inline-block;
+    fill: currentColor;
+
+    &.icon--small {
+    	height: $slight_size;
+    	width: $slight_size;
+    }
+}
 
 [contenteditable] {
 	background: fade-out($black, 0.85);
@@ -248,7 +338,6 @@ b,
 strong,
 .strong {
 	font-weight: bold;
-	font-family: $bold_font;
 	font-style: normal;
 }
 
@@ -258,6 +347,7 @@ em,
 	font-weight: normal;
 }
 
+.alternate { font-family: $alternate_font; }
 .capitalize { text-transform: capitalize; }
 .strike { text-decoration: line-through; }
 

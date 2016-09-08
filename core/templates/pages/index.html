@@ -5,19 +5,17 @@
 
 
 {% block main %}
-<section class="grid grid--vertically_spaced main__full text_center">
-	<div class="col col--12of12 padded"></div>
-
-	<div class="col col--12of12" data-piece-id="{{pieces.metadata._id}}">
-		<h1 class="flat_bottom" data-key="title">{{pieces.metadata.title}}</h1>
-
-		<span data-piece-admin></span>
+<section class="slider black_back">
+	<div class="slider__container">
+		<div class="grid grid--full_height grid--middle">
+			<h1 class="col col--12of12 text_center h1--alternate">Septembre</h1>
+		</div>
 	</div>
 
-	<div class="col col--12of12 padded" data-piece-id="{{pieces.index._id}}">
+	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.index._id}}">
 		<div class="grid grid--guttered">
 			<div class="col col--3of12 col--small--12of12">
-				<h2 class="flat_bottom"><span data-key="barber_1">{{pieces.index.barber_1}}</span></h2>
+				<h4 class="flat_bottom"><span data-key="barber_1">{{pieces.index.barber_1}}</span></h4>
 				<p><a href="{{pieces.index.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.index.barber_1_address}}</span></a></p>
 				<button data-show-setster="1">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_1_locations"></div>
@@ -25,7 +23,7 @@
 			</div>
 
 			<div class="col col--3of12 col--small--12of12">
-				<h2 class="flat_bottom"><span data-key="barber_2">{{pieces.index.barber_2}}</span></h2>
+				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.index.barber_2}}</span></h4>
 				<p><a href="{{pieces.index.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.index.barber_2_address}}</span></a></p>
 				<button data-show-setster="2">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_2_locations"></div>
@@ -33,25 +31,128 @@
 			</div>
 
 			<div class="col col--3of12 col--small--12of12">
-				<h2 class="flat_bottom"><span data-key="barber_3">{{pieces.index.barber_3}}</span></h2>
+				<h4 class="flat_bottom"><span data-key="barber_3">{{pieces.index.barber_3}}</span></h4>
 				<p><a href="{{pieces.index.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.index.barber_3_address}}</span></a></p>
-				{# <a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/0908d138-f258-4986-862a-25a579e2193d" class="button">Prendre rendez-vous</a> #}
 				<button data-show-setster="3">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_3_locations"></div>
 				<div data-hidden-key="barber_3_providers"></div>
 			</div>
 
 			<div class="col col--3of12 col--small--12of12">
-				<h2 class="flat_bottom"><span data-key="contact">{{pieces.index.contact}}</span></h2>
-				<p><span data-key="contact_info">{{pieces.index.contact_info}}</span></p>
-				<a href="{{pieces.index.contact_link}}" class="a--underline" data-link-key="contact_link"><span data-key="contact_label">{{pieces.index.contact_label}}</span></a>
+				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.index.barber_4}}</span></h4>
+				<p><a href="{{pieces.index.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.index.barber_4_address}}</span></a></p>
+				<button data-show-setster="4">Prendre rendez-vous</button>
+				<div data-hidden-key="barber_4_locations"></div>
+				<div data-hidden-key="barber_4_providers"></div>
 			</div>
 		</div>
 
 		<span data-piece-admin></span>
 	</div>
 </section>
+
+<section class="padded padded--very_thick">
+	<h2 class="text_right">
+		{{pieces.metadata.description|safe}}
+	</h2>
+</section>
+
+<section class="padded padded--thick">
+	<div class="grid grid--guttered">
+		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
+			<h5 class="flat_bottom">{{pieces.index.barber_1}}</h5>
+			<p><a href="{{pieces.index.barber_1_address_link}}">{{pieces.index.barber_1_address}}</a></p>
+			<figure class="slider" data-slider>
+				<div class="slider__container" style="width: 100%;" data-slider-container>
+					<div class="slide" data-slide=0>
+						 <div data-slide-content><img src="/build/images/back_1.jpg"></div>
+					</div>
+				</div>
+
+				<div class="slider__button"><button class="button--transparent" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button></div>
+
+			    <div class="slider__button slider__button--right"><button class="button--transparent" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button></div>
+
+			    <div class="slider__markers">
+			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
+			    </div>
+			</figure>
+		</div>
+
+		<div class="col col--2of12 hide_on_medium"></div>
+
+		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
+			<h5 class="flat_bottom">{{pieces.index.barber_2}}</h5>
+			<p><a href="{{pieces.index.barber_2_address_link}}">{{pieces.index.barber_2_address}}</a></p>
+			<figure class="slider" data-slider>
+				<div class="slider__container" style="width: 100%;" data-slider-container>
+					<div class="slide" data-slide=0>
+						 <div data-slide-content><img src="/build/images/back_1.jpg"></div>
+					</div>
+				</div>
+
+				<div class="slider__button"><button class="button--transparent" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button></div>
+
+			    <div class="slider__button slider__button--right"><button class="button--transparent" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button></div>
+
+			    <div class="slider__markers">
+			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
+			    </div>
+			</figure>
+		</div>
+
+		<div class="col col--5of12 hide_on_medium"></div>
+
+		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
+			<h5 class="flat_bottom">{{pieces.index.barber_3}}</h5>
+			<p><a href="{{pieces.index.barber_3_address_link}}">{{pieces.index.barber_3_address}}</a></p>
+			<figure class="slider" data-slider>
+				<div class="slider__container" style="width: 100%;" data-slider-container>
+					<div class="slide" data-slide=0>
+						 <div data-slide-content><img src="/build/images/back_1.jpg"></div>
+					</div>
+				</div>
+
+				<div class="slider__button"><button class="button--transparent" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button></div>
+
+			    <div class="slider__button slider__button--right"><button class="button--transparent" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button></div>
+
+			    <div class="slider__markers">
+			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
+			    </div>
+			</figure>
+		</div>
+
+		<div class="col col--2of12 hide_on_medium"></div>
+
+		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
+			<h5 class="flat_bottom">{{pieces.index.barber_4}}</h5>
+			<p><a href="{{pieces.index.barber_4_address_link}}">{{pieces.index.barber_4_address}}</a></p>
+			<figure class="slider" data-slider>
+				<div class="slider__container" style="width: 100%;" data-slider-container>
+					<div class="slide" data-slide=0>
+						 <div data-slide-content><img src="/build/images/back_1.jpg"></div>
+					</div>
+				</div>
+
+				<div class="slider__button"><button class="button--transparent" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button></div>
+
+			    <div class="slider__button slider__button--right"><button class="button--transparent" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button></div>
+
+			    <div class="slider__markers">
+			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
+			    </div>
+			</figure>
+		</div>
+	</div>
+</section>
 {% endblock %}
+
+
+
+
+
+
 
 
 {% block scripts %}
@@ -103,6 +204,18 @@ setster_3_options.defaultProvider = "{{pieces.index.barber_3_providers}}";
 setster_3_options.defaultLocation = "{{pieces.index.barber_3_locations}}";
 setster_3_options.setsterURL = setsHost;
 window.setster_3 = new Setster.setster_widget(setster_3_options);
+
+window.setster_4_options = {};
+setster_4_options.display = "overlay";
+setster_4_options.displayMode = "web";
+setster_4_options.uri = "frankandoak";
+setster_4_options.placement = "hidden";
+setster_4_options.buttonName = "appointment";
+setster_4_options.locationsMap = 1;
+setster_4_options.defaultProvider = "{{pieces.index.barber_4_providers}}";
+setster_4_options.defaultLocation = "{{pieces.index.barber_4_locations}}";
+setster_4_options.setsterURL = setsHost;
+window.setster_4 = new Setster.setster_widget(setster_4_options);
 </script>
 <!-- End Setster Widget -->
 {% endblock %}

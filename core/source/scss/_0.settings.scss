@@ -18,17 +18,19 @@ $secondary: $black;
 
 // #FONTS
 
-$body_font: "barbierregular", serif;
-$headings_font: "barbierregular", serif;
-$alternate_font: "noto_sansregular", sans-serif;
-$bold_font: "noto_sansbold", sans-serif;
+$body_font: "Barbier", serif;
+$headings_font: "Barbier", serif;
+$alternate_font: "Circular Std", sans-serif;
 
 
 // #LAYOUT
 
-$base_size: 18px;
-$huge_size: 10rem;
-$big_size: 2rem;
+$base_size: 15px;
+$huge_size: 5rem;
+$big_size: 4.5rem;
+$medium_size: 3.5rem;
+$almost_size: 2.267rem;
+$slight_size: 1.667rem;
 $line_height: 1.2;
 $vertical_rythm: 1rem;
 $letter_spacing: 0;
@@ -36,7 +38,7 @@ $border_radius: 0;
 
 $number_of_columns: 12;
 $gutter: 1rem;
-$max_width: 1400px;
+$max_width: 1500px;
 
 
 // #ANIMATIONS

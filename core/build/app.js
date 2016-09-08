@@ -1287,7 +1287,7 @@
     }
 
     Router.prototype.routes = {
-      "(:lang)(/)": "index"
+      "(/)": "index"
     };
 
     Router.prototype.views = [];

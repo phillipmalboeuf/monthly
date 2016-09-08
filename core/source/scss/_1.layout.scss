@@ -26,7 +26,10 @@ body {
 // #HEADER
 
 .header {
-
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 
@@ -34,21 +37,15 @@ body {
 
 .main {
 	max-width: $max_width;
-	margin: 0 auto;
+	margin: 0 auto $vertical_rythm*4;
 }
-
-	.main__full {
-		width: 100%;
-		min-height: 100vh;
-	}
-
-
 
 
 // #FOOTER
 
-footer {
-
+.footer {
+	max-width: $max_width;
+	margin: 0 auto;
 }
 
 
@@ -76,7 +73,8 @@ footer {
 
 .max_width {
 	width: 100%;
-	max-width: 1200px;
+	max-width: $max_width;
+	margin: 0 auto;
 }
 
 .padded {
@@ -86,14 +84,22 @@ footer {
 		padding: $gutter*2;
 
 		@media #{$medium} {
-			padding: $gutter;
+			padding: $gutter*2 $gutter;
+		}
+	}
+
+	&.padded--very_thick {
+		padding: $gutter*4;
+
+		@media #{$medium} {
+			padding: $gutter*4 $gutter*2;
 		}
 	}
 }
 
 .huge_bottom { margin-bottom: $vertical_rythm*8; }
 .big_bottom { margin-bottom: $vertical_rythm*4; }
-.medium_bottom { margin-bottom: $vertical_rythm*2; }
+.medium_bottom { margin-bottom: $vertical_rythm*1.5; }
 .small_bottom { margin-bottom: $vertical_rythm/2; }
 .flat_bottom { margin-bottom: 0 !important; }
 .medium_top { margin-top: $vertical_rythm*2; }

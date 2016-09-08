@@ -56,12 +56,28 @@
 		margin-left: -$gutter;
 		margin-bottom: -$gutter;
 	}
+
+	&.grid--thick_guttered {
+		margin-left: -$gutter*2;
+		margin-bottom: -$gutter;
+	}
+
+	&.grid--full_height {
+		width: 100%;
+		min-height: 100vh;
+		height: 1rem;
+	}
 }
 	
 	.col {
 
 		.grid--guttered > & {
 			padding-left: $gutter;
+			padding-bottom: $gutter;
+		}
+
+		.grid--thick_guttered > & {
+			padding-left: $gutter*2;
 			padding-bottom: $gutter;
 		}
 

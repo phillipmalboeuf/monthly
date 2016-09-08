@@ -4,7 +4,7 @@ class Core.Routers.Router extends Backbone.Router
 
 	routes: {
 		# "lists/:list_route(/tags)(/authors)(/posts)(/:route)(/)": "list"
-		"(:lang)(/)": "index"
+		"(/)": "index"
 	}
 
 	views: []

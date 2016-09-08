@@ -38,9 +38,24 @@
 
 
 
-        <header id="header">
+        <header class="header" id="header">
             {% block header %}
-            
+            <div class="padded padded--thick grid grid--spaced grid--middle max_width">
+                <div data-piece-id="{{pieces.metadata._id}}">
+                    <a href="/"><h1 class="h1--small" data-key="title">{{pieces.metadata.title}}</h1></a>
+
+                    <span data-piece-admin></span>
+                </div>
+
+                <nav class="grid grid--thick_guttered">
+                    <div class="col"><a href="/#reservations" class="nav__link a--thick_line">Réservations</a></div>
+                    <div class="col"><a href="/#salons" class="nav__link a--thick_line">Salons</a></div>
+                    <div class="col"><a href="/#barbers" class="nav__link a--thick_line">Barbiers</a></div>
+                    <div class="col"><a href="/#contact" class="nav__link a--thick_line">Contact</a></div>
+
+                    <span data-piece-admin></span>
+                </nav>
+            </div>
             {% endblock %}
         </header>
 
@@ -58,9 +73,51 @@
 
 
 
-        <footer id="footer">
+        <footer class="footer padded padded--thick" id="footer">
             {% block footer %}
-            
+            <nav class="grid grid--guttered grid--bottom">
+                <div class="col col--3of12 col--medium--6of12 col--small--12of12">
+                    <h5 class="medium_bottom">Adresses</h5>
+                    <p>
+                        <a href="{{pieces.index.barber_1_address_link}}"><span class="alternate">{{pieces.index.barber_1}}.</span> {{pieces.index.barber_1_address}}</a><br>
+                        <a href="{{pieces.index.barber_2_address_link}}"><span class="alternate">{{pieces.index.barber_2}}.</span> {{pieces.index.barber_2_address}}</a><br>
+                        <a href="{{pieces.index.barber_3_address_link}}"><span class="alternate">{{pieces.index.barber_3}}.</span> {{pieces.index.barber_3_address}}</a><br>
+                        <a href="{{pieces.index.barber_4_address_link}}"><span class="alternate">{{pieces.index.barber_4}}.</span> {{pieces.index.barber_4_address}}</a><br>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <div class="col col--3of12 col--medium--6of12 col--small--12of12">
+                    <h5 class="medium_bottom">Téléphone</h5>
+                    <p>
+                        <a href="tel:{{pieces.index.barber_1_telephone}}"><span class="alternate">{{pieces.index.barber_1}}.</span> {{pieces.index.barber_1_telephone}}</a><br>
+                        <a href="tel:{{pieces.index.barber_2_telephone}}"><span class="alternate">{{pieces.index.barber_2}}.</span> {{pieces.index.barber_2_telephone}}</a><br>
+                        <a href="tel:{{pieces.index.barber_3_telephone}}"><span class="alternate">{{pieces.index.barber_3}}.</span> {{pieces.index.barber_3_telephone}}</a><br>
+                        <a href="tel:{{pieces.index.barber_4_telephone}}"><span class="alternate">{{pieces.index.barber_4}}.</span> {{pieces.index.barber_4_telephone}}</a><br>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <div class="col col--3of12 col--medium--6of12 col--small--12of12">
+                    <h5 class="medium_bottom">Email</h5>
+                    <p>
+                        <a href="mailto:{{pieces.index.barber_1_email}}"><span class="alternate">{{pieces.index.barber_1}}.</span> {{pieces.index.barber_1_email}}</a><br>
+                        <a href="mailto:{{pieces.index.barber_2_email}}"><span class="alternate">{{pieces.index.barber_2}}.</span> {{pieces.index.barber_2_email}}</a><br>
+                        <a href="mailto:{{pieces.index.barber_3_email}}"><span class="alternate">{{pieces.index.barber_3}}.</span> {{pieces.index.barber_3_email}}</a><br>
+                        <a href="mailto:{{pieces.index.barber_4_email}}"><span class="alternate">{{pieces.index.barber_4}}.</span> {{pieces.index.barber_4_email}}</a><br>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <div class="col col--3of12 col--medium--6of12 col--small--12of12 grid grid--guttered grid--right">
+                    <div class="col"><a href="https://www.facebook.com/monthlybarber" target="_blank" class="a--thick_line"><svg class="icon-facebook"><use xlink:href="/build/images/icons.svg#icon-facebook"></use></svg></a></div>
+                    <div class="col"><a href="https://www.instagram.com/monthlybarber/" target="_blank" class="a--thick_line"><svg class="icon-instagram"><use xlink:href="/build/images/icons.svg#icon-instagram"></use></svg></a></div>
+                    <div class="col"><a href="https://www.facebook.com/monthlybarber" target="_blank" class="a--thick_line"><svg class="icon-linkedin"><use xlink:href="/build/images/icons.svg#icon-linkedin"></use></svg></a></div>
+                </div>
+            </nav>
             {% endblock %}
         </footer>
 
