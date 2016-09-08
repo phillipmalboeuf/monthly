@@ -20,6 +20,7 @@ window.Core =
 		@user = new Core.Models.User()
 		
 		@admin_view = new Core.Views.Admin()
+		@header_view = new Core.Views.Header()
 
 
 		@router = new Core.Routers.Router()

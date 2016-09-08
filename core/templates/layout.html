@@ -38,9 +38,13 @@
 
 
 
-        <header class="header" id="header">
+        <header class="header white padded padded--thick" id="header">
             {% block header %}
-            <div class="padded padded--thick grid grid--spaced grid--middle max_width">
+            <div class="small_only">
+                <a href="/"><h1 class="h1--small text_center">{{pieces.metadata.title}}</h1></a>
+            </div>
+
+            <div class="grid grid--spaced grid--middle max_width hide_on_small">
                 <div data-piece-id="{{pieces.metadata._id}}">
                     <a href="/"><h1 class="h1--small" data-key="title">{{pieces.metadata.title}}</h1></a>
 

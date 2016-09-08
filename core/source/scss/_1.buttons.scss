@@ -42,6 +42,7 @@ button,
 	&:focus {
 		color: $primary;
 		background: $white;
+		border-color: transparent;
 	}
 
 	&:active {

@@ -9,7 +9,7 @@
 
 	@media #{nth($breakpoint, 2)} {
 		.#{nth($breakpoint, 1)}_only {
-			display: inline-block;
+			display: block;
 
 			&.nav__link,
 			&.col {

@@ -14,6 +14,7 @@
       this.session = new Core.Models.Session();
       this.user = new Core.Models.User();
       this.admin_view = new Core.Views.Admin();
+      this.header_view = new Core.Views.Header();
       this.router = new Core.Routers.Router();
       return Backbone.history.start({
         pushState: true
@@ -869,40 +870,41 @@
   var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  Core.Views.Parallax = (function(superClass) {
-    extend(Parallax, superClass);
+  Core.Views.Header = (function(superClass) {
+    extend(Header, superClass);
 
-    function Parallax() {
-      return Parallax.__super__.constructor.apply(this, arguments);
+    function Header() {
+      return Header.__super__.constructor.apply(this, arguments);
     }
 
-    Parallax.prototype.events = {};
+    Header.prototype.el = $("#header");
 
-    Parallax.prototype.initialize = function() {
-      return this.render();
+    Header.prototype.events = {};
+
+    Header.prototype.initialize = function() {
+      $(window).on("scroll", this.check_scroll.bind(this));
+      return Header.__super__.initialize.call(this);
     };
 
-    Parallax.prototype.render = function() {
-      var layers, translate;
-      layers = this.$el.find(".js-layer");
-      translate = function() {
-        var i, layer, len, results;
-        results = [];
-        for (i = 0, len = layers.length; i < len; i++) {
-          layer = layers[i];
-          results.push(layer.style.transform = "translate3d(0, " + (window.pageYOffset * -layer.getAttribute("data-depth")) + "px, 0)");
+    Header.prototype.render = function() {
+      return Header.__super__.render.call(this);
+    };
+
+    Header.prototype.check_scroll = function(e) {
+      if (window.pageYOffset > window.innerHeight) {
+        if (!this.$el.hasClass("header--with_background")) {
+          return this.$el.addClass("header--with_background");
         }
-        return results;
-      };
-      $(window).scroll(function() {
-        return window.requestAnimationFrame(translate);
-      });
-      return this;
+      } else {
+        if (this.$el.hasClass("header--with_background")) {
+          return this.$el.removeClass("header--with_background");
+        }
+      }
     };
 
-    return Parallax;
+    return Header;
 
-  })(Backbone.View);
+  })(Core.View);
 
 }).call(this);
 

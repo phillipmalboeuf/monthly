@@ -3,7 +3,14 @@
 // #HEADER
 
 .header {
-	color: $white;
+	background: transparent;
+
+	@include transition(color $fast, background $fast);
+
+	&.header--with_background {
+		color: $primary;
+		background: fade-out($white, 0.1);
+	}
 }
 
 	
