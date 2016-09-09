@@ -33,6 +33,16 @@ class Core.Routers.Router extends Backbone.Router
 			})
 
 
+		$("[data-scroll-to]").click (e)->
+			scroll_to = $("#" + e.currentTarget.getAttribute("data-scroll-to"))
+
+			if scroll_to.length > 0
+				e.preventDefault()
+				e.stopImmediatePropagation()
+	
+				scroll_to.velocity("scroll", { duration: 1500, easing: "easeOutQuart", offset: -80 })
+
+
 
 	index: ->
 		$("[data-show-setster]").click (e)->

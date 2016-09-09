@@ -52,10 +52,10 @@
                 </div>
 
                 <nav class="grid grid--thick_guttered">
-                    <div class="col"><a href="/#reservations" class="nav__link a--thick_line">Réservations</a></div>
-                    <div class="col"><a href="/#salons" class="nav__link a--thick_line">Salons</a></div>
-                    <div class="col"><a href="/#barbers" class="nav__link a--thick_line">Barbiers</a></div>
-                    <div class="col"><a href="/#contact" class="nav__link a--thick_line">Contact</a></div>
+                    <div class="col"><a href="/#reservations" data-scroll-to="reservations" class="nav__link a--thick_line">Réservations</a></div>
+                    <div class="col"><a href="/#salons" data-scroll-to="salons" class="nav__link a--thick_line">Salons</a></div>
+                    {# <div class="col"><a href="/#barbers" data-scroll-to="barbers" class="nav__link a--thick_line">Barbiers</a></div> #}
+                    <div class="col"><a href="/#contact" data-scroll-to="contact" class="nav__link a--thick_line">Contact</a></div>
 
                     <span data-piece-admin></span>
                 </nav>
@@ -79,7 +79,7 @@
 
         <footer class="footer padded padded--thick" id="footer">
             {% block footer %}
-            <nav class="grid grid--guttered grid--bottom">
+            <nav class="grid grid--guttered grid--bottom" id="contact">
                 <div class="col col--3of12 col--medium--6of12 col--small--12of12">
                     <h5 class="medium_bottom">Adresses</h5>
                     <p>

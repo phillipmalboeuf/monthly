@@ -7,6 +7,7 @@ class Core.Views.Header extends Core.View
 
 
 	initialize: ->
+		this.check_scroll()
 		$(window).on("scroll", this.check_scroll.bind(this))
 
 		super()

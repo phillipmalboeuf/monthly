@@ -4,6 +4,8 @@
 
 .header {
 	background: transparent;
+	padding-top: $gutter !important;
+	padding-bottom: $gutter/2 !important;
 
 	@include transition(color $fast, background $fast);
 

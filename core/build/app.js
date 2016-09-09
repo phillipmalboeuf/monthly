@@ -882,6 +882,7 @@
     Header.prototype.events = {};
 
     Header.prototype.initialize = function() {
+      this.check_scroll();
       $(window).on("scroll", this.check_scroll.bind(this));
       return Header.__super__.initialize.call(this);
     };
@@ -1308,7 +1309,7 @@
       if (callback != null) {
         callback.apply(this, args);
       }
-      return $("[data-piece-id]").each((function(_this) {
+      $("[data-piece-id]").each((function(_this) {
         return function(index, element) {
           var model;
           model = new Core.Models.Piece({
@@ -1320,6 +1321,19 @@
           }));
         };
       })(this));
+      return $("[data-scroll-to]").click(function(e) {
+        var scroll_to;
+        scroll_to = $("#" + e.currentTarget.getAttribute("data-scroll-to"));
+        if (scroll_to.length > 0) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return scroll_to.velocity("scroll", {
+            duration: 1500,
+            easing: "easeOutQuart",
+            offset: -80
+          });
+        }
+      });
     };
 
     Router.prototype.index = function() {
