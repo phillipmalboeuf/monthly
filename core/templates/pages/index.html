@@ -41,7 +41,8 @@
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.index.barber_4}}</span></h4>
 				<p><a href="{{pieces.index.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.index.barber_4_address}}</span></a></p>
-				<button data-show-setster="4">Prendre rendez-vous</button>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/0908d138-f258-4986-862a-25a579e2193d" class="button">Prendre rendez-vous</a>
+				{# <button data-show-setster="4">Prendre rendez-vous</button> #}
 				<div data-hidden-key="barber_4_locations"></div>
 				<div data-hidden-key="barber_4_providers"></div>
 			</div>
@@ -157,7 +158,7 @@
 
 {% block scripts %}
 
-{# <script type="text/javascript" src="https://my.setmore.com/js/iframe/setmore_iframe.js" async></script> #}
+<script type="text/javascript" src="https://my.setmore.com/js/iframe/setmore_iframe.js" async></script>
 
 
 
@@ -205,17 +206,17 @@ setster_3_options.defaultLocation = "{{pieces.index.barber_3_locations}}";
 setster_3_options.setsterURL = setsHost;
 window.setster_3 = new Setster.setster_widget(setster_3_options);
 
-window.setster_4_options = {};
-setster_4_options.display = "overlay";
-setster_4_options.displayMode = "web";
-setster_4_options.uri = "frankandoak";
-setster_4_options.placement = "hidden";
-setster_4_options.buttonName = "appointment";
-setster_4_options.locationsMap = 1;
-setster_4_options.defaultProvider = "{{pieces.index.barber_4_providers}}";
-setster_4_options.defaultLocation = "{{pieces.index.barber_4_locations}}";
-setster_4_options.setsterURL = setsHost;
-window.setster_4 = new Setster.setster_widget(setster_4_options);
+// window.setster_4_options = {};
+// setster_4_options.display = "overlay";
+// setster_4_options.displayMode = "web";
+// setster_4_options.uri = "frankandoak";
+// setster_4_options.placement = "hidden";
+// setster_4_options.buttonName = "appointment";
+// setster_4_options.locationsMap = 1;
+// setster_4_options.defaultProvider = "{{pieces.index.barber_4_providers}}";
+// setster_4_options.defaultLocation = "{{pieces.index.barber_4_locations}}";
+// setster_4_options.setsterURL = setsHost;
+// window.setster_4 = new Setster.setster_widget(setster_4_options);
 </script>
 <!-- End Setster Widget -->
 {% endblock %}
