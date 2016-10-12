@@ -14,9 +14,9 @@
 		overflow-y: hidden;
 		width: 100%;
 
-		&[data-slider-container] {
-			height: 0px;
-		}
+		// &[data-slider-container] {
+		// 	height: 0px;
+		// }
 
 		@include transition(height $fast);
 	}
