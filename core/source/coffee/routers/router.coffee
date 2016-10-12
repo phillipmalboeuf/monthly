@@ -43,6 +43,12 @@ class Core.Routers.Router extends Backbone.Router
 				scroll_to.velocity("scroll", { duration: 1500, easing: "easeOutQuart", offset: -80 })
 
 
+		$("[data-slider]").each (index, element)=>
+			@views.push new Core.Views.Slider({
+				el: element
+			})
+
+
 
 	index: ->
 		$("[data-show-setster]").click (e)->

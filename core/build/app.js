@@ -1131,6 +1131,75 @@
   var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
+  Core.Views.Slider = (function(superClass) {
+    extend(Slider, superClass);
+
+    function Slider() {
+      return Slider.__super__.constructor.apply(this, arguments);
+    }
+
+    Slider.prototype.current_slide = 0;
+
+    Slider.prototype.events = {
+      "click [data-next-slide-button]": "next_slide",
+      "click [data-previous-slide-button]": "previous_slide",
+      "click [data-slide-marker]": "slide_to"
+    };
+
+    Slider.prototype.initialize = function() {
+      this.slides_count = this.$el.find("[data-slide]").length;
+      return this.render();
+    };
+
+    Slider.prototype.render = function() {
+      this.$el.find("[data-slider-container]").css("width", this.slides_count + "00%");
+      this.$el.find("[data-slide]").css("width", (100 / this.slides_count) + "%");
+      this.previous_slide_height = this.$el.find("[data-slide=" + this.current_slide + "] [data-slide-content]").height();
+      this.$el.find("[data-slider-container]").css("height", "-=" + (this.$el.find("[data-slide=" + this.current_slide + "]").height() - this.previous_slide_height) + "px");
+      return this;
+    };
+
+    Slider.prototype.next_slide = function() {
+      if (this.current_slide === this.slides_count - 1) {
+        return this.slide_to(null, 0);
+      } else {
+        return this.slide_to(null, this.current_slide + 1);
+      }
+    };
+
+    Slider.prototype.previous_slide = function() {
+      if (this.current_slide === 0) {
+        return this.slide_to(null, this.slides_count - 1);
+      } else {
+        return this.slide_to(null, this.current_slide - 1);
+      }
+    };
+
+    Slider.prototype.slide_to = function(e, index) {
+      var slide_height;
+      if (e != null) {
+        index = parseInt(e.currentTarget.getAttribute("data-slide-marker"));
+        e.currentTarget.blur();
+      }
+      this.current_slide = index;
+      this.$el.find("[data-slide-marker]").removeClass("slider__marker--active");
+      this.$el.find("[data-slide-marker=" + this.current_slide + "]").addClass("slider__marker--active");
+      slide_height = this.$el.find("[data-slide=" + this.current_slide + "] [data-slide-content]").height();
+      this.$el.find("[data-slider-container]").css("height", "-=" + (this.previous_slide_height - slide_height) + "px");
+      this.previous_slide_height = slide_height;
+      return this.$el.find("[data-slide]").css("transform", "translateX(-" + this.current_slide + "00%)");
+    };
+
+    return Slider;
+
+  })(Backbone.View);
+
+}).call(this);
+
+(function() {
+  var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
   Core.Views.Survey = (function(superClass) {
     extend(Survey, superClass);
 
@@ -1321,7 +1390,7 @@
           }));
         };
       })(this));
-      return $("[data-scroll-to]").click(function(e) {
+      $("[data-scroll-to]").click(function(e) {
         var scroll_to;
         scroll_to = $("#" + e.currentTarget.getAttribute("data-scroll-to"));
         if (scroll_to.length > 0) {
@@ -1334,6 +1403,13 @@
           });
         }
       });
+      return $("[data-slider]").each((function(_this) {
+        return function(index, element) {
+          return _this.views.push(new Core.Views.Slider({
+            el: element
+          }));
+        };
+      })(this));
     };
 
     Router.prototype.index = function() {
