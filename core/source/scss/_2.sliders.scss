@@ -28,14 +28,17 @@
 			@include translate(0, 0);
 		}
 
-	.slider__button {
+	button.slider__button {
 		position: absolute;
-		top: 45%;
-		left: $gutter/2;
+		top: 0;
+		left: 0;
+
+		padding: $gutter/2;
+		height: 100%;
 
 		&.slider__button--right {
 			left: auto;
-			right: $gutter/2;
+			right: 0;
 		}
 
 		svg {
