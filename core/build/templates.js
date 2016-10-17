@@ -77,7 +77,7 @@ this["templates"]["admin/file_link"] = Handlebars.template({"compiler":[7,">= 4.
 this["templates"]["admin/piece_admin"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<input type=\"file\" class=\"hide js-image_input\">\n\n<button class=\"button--tight js-save_piece\" disabled>"
+  return "<input type=\"file\" class=\"hide js-image_input\">\n\n<button class=\"js-save_piece\" disabled>"
     + container.escapeExpression(container.lambda(((stack1 = ((stack1 = (depth0 != null ? depth0.pieces : depth0)) != null ? stack1.admin : stack1)) != null ? stack1.save : stack1), depth0))
     + "</button>\n";
 },"useData":true});

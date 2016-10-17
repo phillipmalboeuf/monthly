@@ -12,39 +12,37 @@
 		</div>
 	</div>
 
-	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.index._id}}" id="reservations">
+	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.reservations._id}}" id="reservations">
 		<div class="grid grid--guttered">
 			<div class="col col--3of12 col--small--6of12">
-				<h4 class="flat_bottom"><span data-key="barber_1">{{pieces.index.barber_1}}</span></h4>
-				<p><a href="{{pieces.index.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.index.barber_1_address}}</span></a></p>
+				<h4 class="flat_bottom"><span data-key="barber_1">{{pieces.reservations.barber_1}}</span></h4>
+				<p><a href="{{pieces.reservations.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.reservations.barber_1_address}}</span></a></p>
 				<button data-show-setster="1">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_1_locations"></div>
 				<div data-hidden-key="barber_1_providers"></div>
 			</div>
 
 			<div class="col col--3of12 col--small--6of12">
-				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.index.barber_2}}</span></h4>
-				<p><a href="{{pieces.index.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.index.barber_2_address}}</span></a></p>
+				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.reservations.barber_2}}</span></h4>
+				<p><a href="{{pieces.reservations.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.reservations.barber_2_address}}</span></a></p>
 				<button data-show-setster="2">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_2_locations"></div>
 				<div data-hidden-key="barber_2_providers"></div>
 			</div>
 
 			<div class="col col--3of12 col--small--6of12">
-				<h4 class="flat_bottom"><span data-key="barber_3">{{pieces.index.barber_3}}</span></h4>
-				<p><a href="{{pieces.index.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.index.barber_3_address}}</span></a></p>
+				<h4 class="flat_bottom"><span data-key="barber_3">{{pieces.reservations.barber_3}}</span></h4>
+				<p><a href="{{pieces.reservations.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.reservations.barber_3_address}}</span></a></p>
 				<button data-show-setster="3">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_3_locations"></div>
 				<div data-hidden-key="barber_3_providers"></div>
 			</div>
 
 			<div class="col col--3of12 col--small--6of12">
-				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.index.barber_4}}</span></h4>
-				<p><a href="{{pieces.index.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.index.barber_4_address}}</span></a></p>
-				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/0908d138-f258-4986-862a-25a579e2193d" class="button">Prendre rendez-vous</a>
-				{# <button data-show-setster="4">Prendre rendez-vous</button> #}
-				{# <div data-hidden-key="barber_4_locations"></div>
-				<div data-hidden-key="barber_4_providers"></div> #}
+				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.reservations.barber_4}}</span></h4>
+				<p><a href="{{pieces.reservations.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.reservations.barber_4_address}}</span></a></p>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_4_setmore_id}}" class="button">Prendre rendez-vous</a>
+				<div data-hidden-key="barber_4_setmore_id"></div>
 			</div>
 		</div>
 
@@ -52,30 +50,32 @@
 	</div>
 </section>
 
-<section class="padded padded--very_thick">
-	<h2 class="text_right">
+<section class="padded padded--very_thick text_right" data-piece-id="{{pieces.metadata._id}}">
+	<h2 data-key="description">
 		{{pieces.metadata.description|safe}}
 	</h2>
+
+	<span data-piece-admin></span>
 </section>
 
 <section class="padded padded--thick" id="salons">
 	<div class="grid grid--guttered">
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.index.barber_1}}</h5>
-			<p><a href="{{pieces.index.barber_1_address_link}}">{{pieces.index.barber_1_address}}</a></p>
+			<h5 class="flat_bottom">{{pieces.reservations.barber_1}}</h5>
+			<p><a href="{{pieces.reservations.barber_1_address_link}}">{{pieces.reservations.barber_1_address}}</a></p>
 			<figure class="slider" data-slider>
 				<div class="slider__container" data-slider-container>
 					<div class="slide" data-slide=0>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/downtown_1.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/downtown_1.jpg"></div>
 					</div>
 					<div class="slide" data-slide=1>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/downtown_2.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/downtown_2.jpg"></div>
 					</div>
 				</div>
 
-				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
 
-			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 			    <div class="slider__markers">
 			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
@@ -87,27 +87,27 @@
 		<div class="col col--2of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.index.barber_2}}</h5>
-			<p><a href="{{pieces.index.barber_2_address_link}}">{{pieces.index.barber_2_address}}</a></p>
+			<h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
+			<p><a href="{{pieces.reservations.barber_2_address_link}}">{{pieces.reservations.barber_2_address}}</a></p>
 			<figure class="slider" data-slider>
 				<div class="slider__container" data-slider-container>
 					<div class="slide" data-slide=0>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/mileend_1.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/mileend_1.jpg"></div>
 					</div>
 					<div class="slide" data-slide=1>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/mileend_2.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/mileend_2.jpg"></div>
 					</div>
 					<div class="slide" data-slide=2>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/mileend_3.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/mileend_3.jpg"></div>
 					</div>
 					<div class="slide" data-slide=3>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/mileend_4.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/mileend_4.jpg"></div>
 					</div>
 				</div>
 
-				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
 
-			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 			    <div class="slider__markers">
 			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
@@ -121,37 +121,33 @@
 		<div class="col col--5of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.index.barber_3}}</h5>
-			<p><a href="{{pieces.index.barber_3_address_link}}">{{pieces.index.barber_3_address}}</a></p>
+			<h5 class="flat_bottom">{{pieces.reservations.barber_3}}</h5>
+			<p><a href="{{pieces.reservations.barber_3_address_link}}">{{pieces.reservations.barber_3_address}}</a></p>
 			<figure class="slider" data-slider>
 				<div class="slider__container" data-slider-container>
 					<div class="slide" data-slide=0>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/laval_1.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/laval_1.jpg"></div>
 					</div>
 					<div class="slide" data-slide=1>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/laval_2.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/laval_2.jpg"></div>
 					</div>
 					<div class="slide" data-slide=2>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/laval_3.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/laval_3.jpg"></div>
 					</div>
 					<div class="slide" data-slide=3>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/laval_4.jpg"></div>
-					</div>
-					<div class="slide" data-slide=4>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/laval_5.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/laval_4.jpg"></div>
 					</div>
 				</div>
 
-				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
 
-			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 			    <div class="slider__markers">
 			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
 			      <button class="slider__marker" data-slide-marker=1>1</button>
 			      <button class="slider__marker" data-slide-marker=2>2</button>
 			      <button class="slider__marker" data-slide-marker=3>3</button>
-			      <button class="slider__marker" data-slide-marker=4>4</button>
 			    </div>
 			</figure>
 		</div>
@@ -159,27 +155,27 @@
 		<div class="col col--2of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.index.barber_4}}</h5>
-			<p><a href="{{pieces.index.barber_4_address_link}}">{{pieces.index.barber_4_address}}</a></p>
+			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
+			<p><a href="{{pieces.reservations.barber_4_address_link}}">{{pieces.reservations.barber_4_address}}</a></p>
 			<figure class="slider" data-slider>
 				<div class="slider__container" data-slider-container>
 					<div class="slide" data-slide=0>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/vieux_1.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/vieux_1.jpg"></div>
 					</div>
 					<div class="slide" data-slide=1>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/vieux_2.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/vieux_2.jpg"></div>
 					</div>
 					<div class="slide" data-slide=2>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/vieux_3.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/vieux_3.jpg"></div>
 					</div>
 					<div class="slide" data-slide=3>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_800/vieux_4.jpg"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/upload/q_auto,w_700/vieux_4.jpg"></div>
 					</div>
 				</div>
 
-				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
 
-			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 			    <div class="slider__markers">
 			      <button class="slider__marker slider__marker--active" data-slide-marker=0>0</button>
@@ -221,8 +217,8 @@ setster_1_options.uri = "frankandoak";
 setster_1_options.placement = "hidden";
 setster_1_options.buttonName = "appointment";
 setster_1_options.locationsMap = 1;
-setster_1_options.defaultProvider = "{{pieces.index.barber_1_providers}}";  
-setster_1_options.defaultLocation = "{{pieces.index.barber_1_locations}}";  
+setster_1_options.defaultProvider = "{{pieces.reservations.barber_1_providers}}";  
+setster_1_options.defaultLocation = "{{pieces.reservations.barber_1_locations}}";  
 setster_1_options.setsterURL = setsHost; 
 window.setster_1 = new Setster.setster_widget(setster_1_options);
 
@@ -233,8 +229,8 @@ setster_2_options.uri = "frankandoak";
 setster_2_options.placement = "hidden";
 setster_2_options.buttonName = "appointment";
 setster_2_options.locationsMap = 1;
-setster_2_options.defaultProvider = "{{pieces.index.barber_2_providers}}";
-setster_2_options.defaultLocation = "{{pieces.index.barber_2_locations}}";
+setster_2_options.defaultProvider = "{{pieces.reservations.barber_2_providers}}";
+setster_2_options.defaultLocation = "{{pieces.reservations.barber_2_locations}}";
 setster_2_options.setsterURL = setsHost;
 window.setster_2 = new Setster.setster_widget(setster_2_options);
 
@@ -245,22 +241,10 @@ setster_3_options.uri = "frankandoak";
 setster_3_options.placement = "hidden";
 setster_3_options.buttonName = "appointment";
 setster_3_options.locationsMap = 1;
-setster_3_options.defaultProvider = "{{pieces.index.barber_3_providers}}";
-setster_3_options.defaultLocation = "{{pieces.index.barber_3_locations}}";
+setster_3_options.defaultProvider = "{{pieces.reservations.barber_3_providers}}";
+setster_3_options.defaultLocation = "{{pieces.reservations.barber_3_locations}}";
 setster_3_options.setsterURL = setsHost;
 window.setster_3 = new Setster.setster_widget(setster_3_options);
-
-// window.setster_4_options = {};
-// setster_4_options.display = "overlay";
-// setster_4_options.displayMode = "web";
-// setster_4_options.uri = "frankandoak";
-// setster_4_options.placement = "hidden";
-// setster_4_options.buttonName = "appointment";
-// setster_4_options.locationsMap = 1;
-// setster_4_options.defaultProvider = "{{pieces.index.barber_4_providers}}";
-// setster_4_options.defaultLocation = "{{pieces.index.barber_4_locations}}";
-// setster_4_options.setsterURL = setsHost;
-// window.setster_4 = new Setster.setster_widget(setster_4_options);
 </script>
 <!-- End Setster Widget -->
 {% endblock %}
