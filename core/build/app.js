@@ -1150,6 +1150,9 @@
 
     Slider.prototype.initialize = function() {
       this.slides_count = this.$el.find("[data-slide]").length;
+      if (this.el.hasAttribute("data-current-slide")) {
+        this.current_slide = parseInt(this.$el.attr("data-current-slide"));
+      }
       return this.render();
     };
 
@@ -1158,6 +1161,12 @@
       this.$el.find("[data-slide]").css("width", (100 / this.slides_count) + "%");
       this.previous_slide_height = this.$el.find("[data-slide=" + this.current_slide + "] [data-slide-content]").height();
       this.$el.find("[data-slider-container]").css("height", "-=" + (this.$el.find("[data-slide=" + this.current_slide + "]").height() - this.previous_slide_height) + "px");
+      this.$el.find("[data-slide]").css("transform", "translateX(-" + this.current_slide + "00%)");
+      setTimeout((function(_this) {
+        return function() {
+          return _this.$el.find("[data-slide]").css("visibility", "visible");
+        };
+      })(this), 666);
       return this;
     };
 

@@ -13,6 +13,10 @@ class Core.Views.Slider extends Backbone.View
 	
 	initialize: ->
 		@slides_count = this.$el.find("[data-slide]").length
+
+		if this.el.hasAttribute("data-current-slide")
+			@current_slide = parseInt this.$el.attr("data-current-slide")
+
 		this.render()
 
 		
@@ -25,6 +29,11 @@ class Core.Views.Slider extends Backbone.View
 		this.$el.find("[data-slide]").css "width", (100/@slides_count)+"%"
 		@previous_slide_height = this.$el.find("[data-slide="+@current_slide+"] [data-slide-content]").height()
 		this.$el.find("[data-slider-container]").css "height", "-="+(this.$el.find("[data-slide="+@current_slide+"]").height() - @previous_slide_height)+"px"
+		this.$el.find("[data-slide]").css "transform", "translateX(-"+@current_slide+"00%)"
+
+		setTimeout =>
+			this.$el.find("[data-slide]").css "visibility", "visible"
+		, 666
 
 		this
 

@@ -15,41 +15,73 @@
 	&.grid--center {
 		justify-content: center;
 		-webkit-justify-content: center;
+		-ms-justify-content: center;
 	}
 
 	&.grid--right {
 		justify-content: flex-end;
 		-webkit-justify-content: flex-end;
+		-ms-justify-content: flex-end;
 	}
 
 	&.grid--spaced {
 		justify-content: space-between;
 		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+	}
+
+	&.grid--spaced_around {
+		justify-content: space-around;
+		-webkit-justify-content: space-around;
+		-ms-justify-content: space-around;
 	}
 
 	&.grid--vertically_spaced {
 		align-content: space-between;
 		-webkit-align-content: space-between;
+		-ms-align-content: space-between;
 	}
 
 	&.grid--vertically_centered {
 		align-content: center;
 		-webkit-align-content: center;
+		-ms-align-content: center;
 	}
 
 	&.grid--stretch {
 		align-items: stretch;
 		-webkit-align-items: stretch;
+		-ms-align-items: stretch;
 	}
 
 	&.grid--middle {
 		align-items: center;
 		-webkit-align-items: center;
+		-ms-align-items: center;
+	}
+
+	&.grid--top {
+		align-items: flex-start;
+		-webkit-align-items: flex-start;
+		-ms-align-items: flex-start;
 	}
 
 	&.grid--bottom {
 		align-items: flex-end;
 		-webkit-align-items: flex-end;
+		-ms-align-items: flex-end;
+	}
+
+	&.grid--reverse {
+		-webkit-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+
+	&.grid--nowrap {
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
 	}
 
 	&.grid--guttered {

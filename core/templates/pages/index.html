@@ -5,12 +5,28 @@
 
 
 {% block main %}
-<section class="slider black_back">
-	<div class="slider__container">
-		<div class="grid grid--full_height grid--middle image_back" style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,g_auto/dpr_auto,w_auto/v1473360923/back_2.jpg)">
-			<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Octobre</h1>
+<section class="slider black_back" data-slider data-current-slide=2>
+	<div class="slider__container" data-slider-container>
+		<div class="slide" data-slide=0>
+			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_august.jpg)">
+				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Août</h1>
+			</div>
+		</div>
+		<div class="slide" data-slide=1>
+			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_2.jpg)">
+				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Septembre</h1>
+			</div>
+		</div>
+		<div class="slide" data-slide=2>
+			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_octobre_2.jpg)">
+				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Octobre</h1>
+			</div>
 		</div>
 	</div>
+
+	<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+
+	<button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.reservations._id}}" id="reservations">
 		<div class="grid grid--guttered">

@@ -14,17 +14,13 @@
 		overflow-y: hidden;
 		width: 100%;
 
-		// &[data-slider-container] {
-		// 	height: 0px;
-		// }
-
-		@include transition(height $fast);
+		@include transition(height $slow);
 	}
 
 		.slide {
-			width: 100%;
+			visibility: hidden;
 
-			@include transformer();
+			@include transformer($slow);
 			@include translate(0, 0);
 		}
 
