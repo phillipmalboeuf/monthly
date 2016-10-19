@@ -7,21 +7,13 @@
 {% block main %}
 <section class="slider black_back" data-slider data-current-slide=2>
 	<div class="slider__container" data-slider-container data-piece-id={{pieces.index._id}}>
-		<div class="slide" data-slide=0>
-			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_august.jpg)">
-				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Août</h1>
+		{% for slide in pieces.index.months %}
+		<div class="slide" data-slide={{loop.index0}}>
+			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{slide.image}})">
+				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">{{slide.title}}</h1>
 			</div>
 		</div>
-		<div class="slide" data-slide=1>
-			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_2.jpg)">
-				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Septembre</h1>
-			</div>
-		</div>
-		<div class="slide" data-slide=2>
-			<div class="grid grid--full_height grid--middle image_back" data-slide-content style="background-image:url(https://res.cloudinary.com/deming/image/upload/c_fill,f_auto,g_auto,h_930,q_auto,w_1400/back_octobre_2.jpg)">
-				<h1 class="col col--12of12 text_center h1--alternate hide_on_small">Octobre</h1>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 
 	<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
@@ -83,7 +75,7 @@
 				<div class="slider__container" data-slider-container>
 					{% for slide in pieces.salons.slides_1 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_700/{{slide.image}}"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
 					</div>
 					{% endfor %}
 				</div>
@@ -94,7 +86,7 @@
 
 			    <div class="slider__markers">
 			    	{% for slide in pieces.salons.slides_1 %}
-			      	<button class="slider__marker slider__marker--active" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 			      	{% endfor %}
 			    </div>
 			</figure>
@@ -109,7 +101,7 @@
 				<div class="slider__container" data-slider-container>
 					{% for slide in pieces.salons.slides_2 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_700/{{slide.image}}"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
 					</div>
 					{% endfor %}
 				</div>
@@ -120,7 +112,7 @@
 
 			    <div class="slider__markers">
 			    	{% for slide in pieces.salons.slides_2 %}
-			      	<button class="slider__marker slider__marker--active" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 			      	{% endfor %}
 			    </div>
 			</figure>
@@ -135,7 +127,7 @@
 				<div class="slider__container" data-slider-container>
 					{% for slide in pieces.salons.slides_3 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_700/{{slide.image}}"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
 					</div>
 					{% endfor %}
 				</div>
@@ -146,7 +138,7 @@
 
 			    <div class="slider__markers">
 			    	{% for slide in pieces.salons.slides_3 %}
-			      	<button class="slider__marker slider__marker--active" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 			      	{% endfor %}
 			    </div>
 			</figure>
@@ -161,7 +153,7 @@
 				<div class="slider__container" data-slider-container>
 					{% for slide in pieces.salons.slides_4 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_700/{{slide.image}}"></div>
+						 <div data-slide-content><img src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
 					</div>
 					{% endfor %}
 				</div>
@@ -172,7 +164,7 @@
 
 			    <div class="slider__markers">
 			    	{% for slide in pieces.salons.slides_4 %}
-			      	<button class="slider__marker slider__marker--active" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 			      	{% endfor %}
 			    </div>
 			</figure>
