@@ -63,6 +63,7 @@ with app.app_context():
 								response = {
 									template['response_key']: response.copy(),
 									'pieces': Piece._values(),
+									'root': request.host_url,
 									'debugging': app.config['DEBUG']
 								}
 								response['pieces_json'] = json.dumps(response['pieces'], sort_keys=False, default=json_formater)

@@ -19,6 +19,7 @@ def page(lang=None):
 
 		response = {
 			'pieces': Piece._values(lang),
+			'root': request.host_url,
 			'debugging': app.config['DEBUG']
 		}
 		response['pieces_json'] = json.dumps(response['pieces'], sort_keys=False, default=json_formater)
