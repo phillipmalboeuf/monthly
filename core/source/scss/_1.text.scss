@@ -319,7 +319,12 @@ sub {
 }
 
 [contenteditable] {
+	position: relative;
 	background: fade-out($black, 0.85);
+
+	&:active {
+		top: 1px;
+	}
 }
 
 iframe {

@@ -12,6 +12,7 @@ class Core.Views.Piece extends Core.View
 		"input [data-key]": "key_input"
 		"click [data-key]": "prevent_click"
 		"click [data-image-key]": "trigger_upload"
+		"input [data-slide-title]": "key_input"
 		"change .js-image_input": "upload_image"
 	}
 
@@ -55,11 +56,16 @@ class Core.Views.Piece extends Core.View
 
 			this.$el.find("[data-image-key]").each (index, image)=>
 				$(image).addClass "img--clickable"
+
+
+			this.$el.find("[data-slides-key]").each (index, slides)=>
+				$(slides).find("img").addClass "img--clickable"
+				$(slides).find("[data-slide-title]").attr "contenteditable", "true"
 				
 
 
 			this.$el.find("[data-piece-admin]").html this.piece_admin_template(@data)
-			@button = this.$el.find(".js-save_piece")[0]
+			@button = this.$el.find(".js-save_piece")
 
 		this
 
@@ -90,8 +96,8 @@ class Core.Views.Piece extends Core.View
 
 
 	key_input: (e)->
-		if @button.hasAttribute "disabled"
-			@button.removeAttribute "disabled"
+		if @button.attr "disabled"
+			@button.removeAttr "disabled"
 
 
 	trigger_upload: (e)->

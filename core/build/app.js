@@ -931,6 +931,7 @@
       "input [data-key]": "key_input",
       "click [data-key]": "prevent_click",
       "click [data-image-key]": "trigger_upload",
+      "input [data-slide-title]": "key_input",
       "change .js-image_input": "upload_image"
     };
 
@@ -972,8 +973,14 @@
             return $(image).addClass("img--clickable");
           };
         })(this));
+        this.$el.find("[data-slides-key]").each((function(_this) {
+          return function(index, slides) {
+            $(slides).find("img").addClass("img--clickable");
+            return $(slides).find("[data-slide-title]").attr("contenteditable", "true");
+          };
+        })(this));
         this.$el.find("[data-piece-admin]").html(this.piece_admin_template(this.data));
-        this.button = this.$el.find(".js-save_piece")[0];
+        this.button = this.$el.find(".js-save_piece");
       }
       return this;
     };
@@ -1013,8 +1020,8 @@
     };
 
     Piece.prototype.key_input = function(e) {
-      if (this.button.hasAttribute("disabled")) {
-        return this.button.removeAttribute("disabled");
+      if (this.button.attr("disabled")) {
+        return this.button.removeAttr("disabled");
       }
     };
 
