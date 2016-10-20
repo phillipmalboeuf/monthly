@@ -1453,13 +1453,18 @@
           });
         }
       });
-      return $("[data-slider]").each((function(_this) {
+      $("[data-slider]").each((function(_this) {
         return function(index, element) {
           return _this.views.push(new Core.Views.Slider({
             el: element
           }));
         };
       })(this));
+      if (typeof ga !== "undefined" && ga !== null) {
+        return $("[data-click-event]").click(function(e) {
+          return ga("send", "event", "reservations", "click", e.currentTarget.getAttribute("data-click-event"));
+        });
+      }
     };
 
     Router.prototype.index = function() {

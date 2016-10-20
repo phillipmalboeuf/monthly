@@ -48,6 +48,11 @@ class Core.Routers.Router extends Backbone.Router
 				el: element
 			})
 
+		if ga?
+			$("[data-click-event]").click (e)->
+				ga("send", "event", "reservations", "click", e.currentTarget.getAttribute("data-click-event"))
+			
+
 
 
 	index: ->
