@@ -7,14 +7,16 @@
 {% block main %}
 <section class="slider black_back" data-slider data-current-slide=2>
 	<div data-piece-id="{{pieces.index._id}}">
-		<div class="slider__container" data-slider-container data-slides-key="months">
+		<div class="slider__container" data-slider-container data-slides-key="months" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/">
 			{% for slide in pieces.index.months %}
 			<div class="slide" data-slide={{loop.index0}}>
-				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-image style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{slide.image}})">
+				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{slide.image}})">
 					<h1 class="col col--12of12 text_center h1--alternate hide_on_small"><span data-slide-title>{{slide.title}}</span><span data-piece-admin></span></h1>
 				</div>
 			</div>
 			{% endfor %}
+
+			<span data-slide-admin></span>
 		</div>
 	</div>
 
@@ -74,12 +76,14 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_1}}</h5>
 			<p><a href="{{pieces.reservations.barber_1_address_link}}">{{pieces.reservations.barber_1_address}}</a></p>
 			<figure class="slider" data-slider>
-				<div class="slider__container" data-slider-container data-slides-key="slides_1">
+				<div class="slider__container" data-slider-container data-slides-key="slides_1" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/">
 					{% for slide in pieces.salons.slides_1 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"><span data-slide-title></span></div>
 					</div>
 					{% endfor %}
+
+					<span data-slide-admin></span>
 				</div>
 
 				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
@@ -100,12 +104,14 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
 			<p><a href="{{pieces.reservations.barber_2_address_link}}">{{pieces.reservations.barber_2_address}}</a></p>
 			<figure class="slider" data-slider>
-				<div class="slider__container" data-slider-container data-slides-key="slides_2">
+				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/">
 					{% for slide in pieces.salons.slides_2 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"><span data-slide-title></span></div>
 					</div>
 					{% endfor %}
+
+					<span data-slide-admin></span>
 				</div>
 
 				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
@@ -126,12 +132,14 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_3}}</h5>
 			<p><a href="{{pieces.reservations.barber_3_address_link}}">{{pieces.reservations.barber_3_address}}</a></p>
 			<figure class="slider" data-slider>
-				<div class="slider__container" data-slider-container data-slides-key="slides_3">
+				<div class="slider__container" data-slider-container data-slides-key="slides_3" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/">
 					{% for slide in pieces.salons.slides_3 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"><span data-slide-title></span></div>
 					</div>
 					{% endfor %}
+
+					<span data-slide-admin></span>
 				</div>
 
 				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
@@ -152,12 +160,14 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
 			<p><a href="{{pieces.reservations.barber_4_address_link}}">{{pieces.reservations.barber_4_address}}</a></p>
 			<figure class="slider" data-slider>
-				<div class="slider__container" data-slider-container data-slides-key="slides_4">
+				<div class="slider__container" data-slider-container data-slides-key="slides_4" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/">
 					{% for slide in pieces.salons.slides_4 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750/{{slide.image}}"><span data-slide-title></span></div>
 					</div>
 					{% endfor %}
+
+					<span data-slide-admin></span>
 				</div>
 
 				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
@@ -172,6 +182,8 @@
 			</figure>
 		</div>
 	</div>
+
+	<span data-piece-admin></span>
 </section>
 {% endblock %}
 

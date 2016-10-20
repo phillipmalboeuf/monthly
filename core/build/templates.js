@@ -82,6 +82,14 @@ this["templates"]["admin/piece_admin"] = Handlebars.template({"compiler":[7,">= 
     + "</button>\n";
 },"useData":true});
 
+this["templates"]["admin/piece_background"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<img src=\""
+    + container.escapeExpression(((helper = (helper = helpers.image || (depth0 != null ? depth0.image : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"image","hash":{},"data":data}) : helper)))
+    + "\" class=\"img--clickable slider__corner_image\" data-slide-image>\n";
+},"useData":true});
+
 this["templates"]["admin/piece_hidden"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -102,6 +110,10 @@ this["templates"]["admin/piece_link"] = Handlebars.template({"compiler":[7,">= 4
     + "\">"
     + alias4(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data}) : helper)))
     + "</span>]</small>\n";
+},"useData":true});
+
+this["templates"]["admin/slide_admin"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<a href=\"#\" class=\"a--underline slider__corner_link\" data-add-new-slide>Add new slide</a>\n";
 },"useData":true});
 
 this["templates"]["admin/tag"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

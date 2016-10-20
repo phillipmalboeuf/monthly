@@ -926,12 +926,18 @@
 
     Piece.prototype.piece_hidden_template = templates["admin/piece_hidden"];
 
+    Piece.prototype.piece_background_template = templates["admin/piece_background"];
+
+    Piece.prototype.slide_admin_template = templates["admin/slide_admin"];
+
     Piece.prototype.events = {
       "click .js-save_piece": "save_piece",
       "input [data-key]": "key_input",
       "click [data-key]": "prevent_click",
       "click [data-image-key]": "trigger_upload",
+      "click [data-slide-image]": "trigger_upload",
       "input [data-slide-title]": "key_input",
+      "click [data-add-new-slide]": "new_slide",
       "change .js-image_input": "upload_image"
     };
 
@@ -973,10 +979,19 @@
             return $(image).addClass("img--clickable");
           };
         })(this));
+        this.$el.find("[data-slide-background]").each((function(_this) {
+          return function(index, element) {
+            $(element).append(_this.piece_background_template({
+              image: $(element).css("background-image").slice(4, -1).replace(/"/g, "")
+            }));
+            return element.removeAttribute("data-slide-background");
+          };
+        })(this));
         this.$el.find("[data-slides-key]").each((function(_this) {
           return function(index, slides) {
-            $(slides).find("img").addClass("img--clickable");
-            return $(slides).find("[data-slide-title]").attr("contenteditable", "true");
+            $(slides).find("[data-slide-image]").addClass("img--clickable");
+            $(slides).find("[data-slide-title]").attr("contenteditable", "true");
+            return $(slides).find("[data-slide-admin]").html(_this.slide_admin_template({}));
           };
         })(this));
         this.$el.find("[data-piece-admin]").html(this.piece_admin_template(this.data));
@@ -1015,6 +1030,19 @@
             return _this.model.attributes.content[key.getAttribute("data-image-key")].value = key.getAttribute("src");
           };
         })(this));
+        this.$el.find("[data-slides-key]").each((function(_this) {
+          return function(index, key) {
+            var slides;
+            slides = [];
+            $(key).find("[data-slide-image]").each(function(index, image) {
+              return slides.push({
+                title: $(key).find("[data-slide-title]")[index].innerText,
+                image: image.src.replace(key.getAttribute("data-slides-cdn"), "")
+              });
+            });
+            return _this.model.attributes.content[key.getAttribute("data-slides-key")].value = slides;
+          };
+        })(this));
       }
       return this.model.save();
     };
@@ -1028,7 +1056,7 @@
     Piece.prototype.trigger_upload = function(e) {
       var input;
       input = this.$el.find(".js-image_input");
-      this.image_key = e.currentTarget.getAttribute("data-image-key");
+      this.image = e.currentTarget;
       return input.click();
     };
 
@@ -1039,12 +1067,16 @@
         return Core.helpers.upload(file, {
           success: (function(_this) {
             return function(response) {
-              _this.$el.find("[data-image-key='" + _this.image_key + "']").attr("src", Core.settings.cdn + response.url);
+              $(_this.image).attr("src", Core.settings.cdn + response.url);
               return _this.key_input();
             };
           })(this)
         });
       }
+    };
+
+    Piece.prototype.new_slide = function(e) {
+      return e.preventDefault();
     };
 
     Piece.prototype.prevent_click = function(e) {
