@@ -8,6 +8,7 @@ class Core.Views.Slider extends Backbone.View
 		"click [data-next-slide-button]": "next_slide"
 		"click [data-previous-slide-button]": "previous_slide"
 		"click [data-slide-marker]": "slide_to"
+		"click [data-add-new-slide]": "new_slide"
 	}
 
 	
@@ -72,6 +73,21 @@ class Core.Views.Slider extends Backbone.View
 		this.$el.find("[data-slide]").css "transform", "translateX(-"+@current_slide+"00%)"
 
 
+
+	new_slide: (e)->
+		e.preventDefault()
+
+		slide = this.$el.find("[data-slide]").last().clone()
+		slide.attr "data-slide", @slides_count
+		slide.find("[data-slide-image]").attr "src", "https://placehold.it/750x500?text=%2B"
+		slide.find("[data-slide-content]").css "background-image", "none"
+		slide.find("[data-slide-title]").text "<Mois>"
+		@slides_count = @slides_count + 1
+
+		this.$el.find("[data-slider-container]").append slide
+		this.render()
+
+		this.slide_to null, @slides_count - 1
 		
 
 

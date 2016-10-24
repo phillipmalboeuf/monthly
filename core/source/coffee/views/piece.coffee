@@ -16,7 +16,6 @@ class Core.Views.Piece extends Core.View
 		"click [data-image-key]": "trigger_upload"
 		"click [data-slide-image]": "trigger_upload"
 		"input [data-slide-title]": "key_input"
-		"click [data-add-new-slide]": "new_slide"
 		"change .js-image_input": "upload_image"
 	}
 
@@ -109,7 +108,7 @@ class Core.Views.Piece extends Core.View
 				slides = []
 				$(key).find("[data-slide-image]").each (index, image)=>
 					slides.push {
-						title: $(key).find("[data-slide-title]")[index].innerText
+						title: $(key).find("[data-slide-title]")[index].innerText if $(key).find("[data-slide-title]").length > 0
 						image: image.src.replace(key.getAttribute("data-slides-cdn"), "")
 					}
 
@@ -125,7 +124,7 @@ class Core.Views.Piece extends Core.View
 
 
 	trigger_upload: (e)->
-		input = this.$el.find(".js-image_input")
+		input = this.$el.find(".js-image_input").first()
 		@image = e.currentTarget
 		input.click()
 
@@ -139,10 +138,6 @@ class Core.Views.Piece extends Core.View
 					
 					$(@image).attr "src", Core.settings.cdn+response.url
 					this.key_input()
-
-
-	new_slide: (e)->
-		e.preventDefault()
 
 
 	prevent_click: (e)->

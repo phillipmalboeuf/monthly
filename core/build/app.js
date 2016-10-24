@@ -941,7 +941,6 @@
       "click [data-image-key]": "trigger_upload",
       "click [data-slide-image]": "trigger_upload",
       "input [data-slide-title]": "key_input",
-      "click [data-add-new-slide]": "new_slide",
       "change .js-image_input": "upload_image"
     };
 
@@ -1040,7 +1039,7 @@
             slides = [];
             $(key).find("[data-slide-image]").each(function(index, image) {
               return slides.push({
-                title: $(key).find("[data-slide-title]")[index].innerText,
+                title: $(key).find("[data-slide-title]").length > 0 ? $(key).find("[data-slide-title]")[index].innerText : void 0,
                 image: image.src.replace(key.getAttribute("data-slides-cdn"), "")
               });
             });
@@ -1059,7 +1058,7 @@
 
     Piece.prototype.trigger_upload = function(e) {
       var input;
-      input = this.$el.find(".js-image_input");
+      input = this.$el.find(".js-image_input").first();
       this.image = e.currentTarget;
       return input.click();
     };
@@ -1077,10 +1076,6 @@
           })(this)
         });
       }
-    };
-
-    Piece.prototype.new_slide = function(e) {
-      return e.preventDefault();
     };
 
     Piece.prototype.prevent_click = function(e) {
@@ -1188,7 +1183,8 @@
     Slider.prototype.events = {
       "click [data-next-slide-button]": "next_slide",
       "click [data-previous-slide-button]": "previous_slide",
-      "click [data-slide-marker]": "slide_to"
+      "click [data-slide-marker]": "slide_to",
+      "click [data-add-new-slide]": "new_slide"
     };
 
     Slider.prototype.initialize = function() {
@@ -1242,6 +1238,20 @@
       this.$el.find("[data-slider-container]").css("height", "-=" + (this.previous_slide_height - slide_height) + "px");
       this.previous_slide_height = slide_height;
       return this.$el.find("[data-slide]").css("transform", "translateX(-" + this.current_slide + "00%)");
+    };
+
+    Slider.prototype.new_slide = function(e) {
+      var slide;
+      e.preventDefault();
+      slide = this.$el.find("[data-slide]").last().clone();
+      slide.attr("data-slide", this.slides_count);
+      slide.find("[data-slide-image]").attr("src", "https://placehold.it/750x500?text=%2B");
+      slide.find("[data-slide-content]").css("background-image", "none");
+      slide.find("[data-slide-title]").text("<Mois>");
+      this.slides_count = this.slides_count + 1;
+      this.$el.find("[data-slider-container]").append(slide);
+      this.render();
+      return this.slide_to(null, this.slides_count - 1);
     };
 
     return Slider;
