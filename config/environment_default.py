@@ -9,6 +9,9 @@ elif DEBUG.lower() == 'false':
 	DEBUG = False
 
 
+MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+
+
 # CONFIGURATION
 LANGS = os.getenv('LANGS', 'en')
 LANGS = LANGS.split(',')
