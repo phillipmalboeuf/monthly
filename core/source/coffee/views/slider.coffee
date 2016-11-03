@@ -87,6 +87,9 @@ class Core.Views.Slider extends Backbone.View
 		this.$el.find("[data-slider-container]").append slide
 		this.render()
 
+		for view in Core.router.views
+			view.render()
+
 		this.slide_to null, @slides_count - 1
 		
 

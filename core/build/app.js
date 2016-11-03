@@ -1057,10 +1057,8 @@
     };
 
     Piece.prototype.trigger_upload = function(e) {
-      var input;
-      input = this.$el.find(".js-image_input").first();
       this.image = e.currentTarget;
-      return input.click();
+      return this.$el.find(".js-image_input").first().click();
     };
 
     Piece.prototype.upload_image = function(e) {
@@ -1241,7 +1239,7 @@
     };
 
     Slider.prototype.new_slide = function(e) {
-      var slide;
+      var i, len, ref, slide, view;
       e.preventDefault();
       slide = this.$el.find("[data-slide]").last().clone();
       slide.attr("data-slide", this.slides_count);
@@ -1251,6 +1249,11 @@
       this.slides_count = this.slides_count + 1;
       this.$el.find("[data-slider-container]").append(slide);
       this.render();
+      ref = Core.router.views;
+      for (i = 0, len = ref.length; i < len; i++) {
+        view = ref[i];
+        view.render();
+      }
       return this.slide_to(null, this.slides_count - 1);
     };
 

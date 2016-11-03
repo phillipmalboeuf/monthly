@@ -124,9 +124,8 @@ class Core.Views.Piece extends Core.View
 
 
 	trigger_upload: (e)->
-		input = this.$el.find(".js-image_input").first()
 		@image = e.currentTarget
-		input.click()
+		this.$el.find(".js-image_input").first().click()
 
 
 	upload_image: (e)->

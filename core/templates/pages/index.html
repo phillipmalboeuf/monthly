@@ -5,7 +5,7 @@
 
 
 {% block main %}
-<section class="slider black_back" data-slider data-current-slide=2>
+<section class="slider black_back" data-slider data-current-slide={{pieces.index.months|length - 1}}>
 	<div data-piece-id="{{pieces.index._id}}">
 		<div class="slider__container" data-slider-container data-slides-key="months" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/">
 			{% for slide in pieces.index.months %}
