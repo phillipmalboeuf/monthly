@@ -135,6 +135,7 @@
         <script data-turbolinks-eval="false">
             var pieces = {{pieces_json|safe}};
             var core_settings = {
+                host: "{{request.host}}",
                 api: window.location.origin+"/"{% if lang %},
                 lang: "{{lang}}"{% endif %},
                 lang_route: "{{lang_route}}"
