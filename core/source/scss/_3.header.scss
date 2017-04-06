@@ -4,8 +4,7 @@
 
 .header {
 	background: transparent;
-	padding-top: $gutter !important;
-	padding-bottom: $gutter/2 !important;
+	
 
 	@include transition(color $fast, background $fast);
 
@@ -14,6 +13,10 @@
 		background: fade-out($white, 0.1);
 	}
 }
+
+	.header__inner {
+		padding: $gutter $gutter*2 $gutter/2;
+	}
 
 	
 
