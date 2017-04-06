@@ -15,13 +15,13 @@ window.Core =
 
 
 	init: ->
-
 		@session = new Core.Models.Session()
 		@user = new Core.Models.User()
 		
 		@admin_view = new Core.Views.Admin()
 		@header_view = new Core.Views.Header()
 
+		@overlay_view = new Core.Views.Overlay()
 
 		@router = new Core.Routers.Router()
 		Backbone.history.start

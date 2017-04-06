@@ -15,6 +15,7 @@
       this.user = new Core.Models.User();
       this.admin_view = new Core.Views.Admin();
       this.header_view = new Core.Views.Header();
+      this.overlay_view = new Core.Views.Overlay();
       this.router = new Core.Routers.Router();
       return Backbone.history.start({
         pushState: true
@@ -917,6 +918,52 @@
   var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
+  Core.Views.Overlay = (function(superClass) {
+    extend(Overlay, superClass);
+
+    function Overlay() {
+      return Overlay.__super__.constructor.apply(this, arguments);
+    }
+
+    Overlay.prototype.el = $("#overlay");
+
+    Overlay.prototype.events = {
+      "click .js-hide": "hide"
+    };
+
+    Overlay.prototype.initialize = function() {
+      return Overlay.__super__.initialize.call(this);
+    };
+
+    Overlay.prototype.render = function() {
+      return Overlay.__super__.render.call(this);
+    };
+
+    Overlay.prototype.show = function(e, src) {
+      if (e != null) {
+        e.preventDefault();
+      }
+      this.$el.find("iframe").attr("src", src);
+      return this.$el.addClass("overlay--show");
+    };
+
+    Overlay.prototype.hide = function(e) {
+      if (e != null) {
+        e.preventDefault();
+      }
+      return this.$el.removeClass("overlay--show");
+    };
+
+    return Overlay;
+
+  })(Core.View);
+
+}).call(this);
+
+(function() {
+  var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
   Core.Views.Piece = (function(superClass) {
     extend(Piece, superClass);
 
@@ -1485,8 +1532,12 @@
     };
 
     Router.prototype.index = function() {
-      return $("[data-show-setster]").click(function(e) {
+      $("[data-show-setster]").click(function(e) {
         return window['setster_' + e.currentTarget.getAttribute("data-show-setster")].show();
+      });
+      return $("[data-show-resurva]").click(function(e) {
+        e.preventDefault();
+        return Core.overlay_view.show(e, e.currentTarget.getAttribute("href"));
       });
     };
 

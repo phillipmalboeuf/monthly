@@ -58,6 +58,11 @@ class Core.Routers.Router extends Backbone.Router
 	index: ->
 		$("[data-show-setster]").click (e)->
 			window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
+
+		$("[data-show-resurva]").click (e)->
+			e.preventDefault()
+
+			Core.overlay_view.show e, e.currentTarget.getAttribute("href")
 		
 
 
