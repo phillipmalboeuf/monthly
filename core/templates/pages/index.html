@@ -53,12 +53,12 @@
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.reservations.barber_4}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.reservations.barber_4_address}}</span></a></p>
-				{% if request.host == 'localhost:5000' or request.host == 'monthly.destruct.codes' %}
+				{# {% if request.host == 'localhost:5000' or request.host == 'monthly.destruct.codes' %}
 				<a href="https://monthly.resurva.com/book?embedded=true" target="_blank" class="button" data-show-resurva data-click-event="vieux">Prendre rendez-vous</a>
-				{% else %}
+				{% else %} #}
 				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_4_setmore_id}}" class="button" data-click-event="vieux">Prendre rendez-vous</a>
 				<div data-hidden-key="barber_4_setmore_id"></div>
-				{% endif %}
+				{# {% endif %} #}
 			</div>
 		</div>
 
