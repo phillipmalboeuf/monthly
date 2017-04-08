@@ -60,7 +60,7 @@ class Core.Routers.Router extends Backbone.Router
 			window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
 
 
-		if window.location.host == "localhost:5000" or window.location.host == "monthly.destruct.codes"
+		if window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech"
 			$("[data-show-resurva]").click (e)->
 				e.preventDefault()
 				e.stopImmediatePropagation()
