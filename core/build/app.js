@@ -1535,10 +1535,13 @@
       $("[data-show-setster]").click(function(e) {
         return window['setster_' + e.currentTarget.getAttribute("data-show-setster")].show();
       });
-      return $("[data-show-resurva]").click(function(e) {
-        e.preventDefault();
-        return Core.overlay_view.show(e, e.currentTarget.getAttribute("href"));
-      });
+      if (window.location.host === "localhost:5000" || window.location.host === "monthly.destruct.codes") {
+        return $("[data-show-resurva]").click(function(e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return Core.overlay_view.show(e, e.currentTarget.getAttribute("data-show-resurva"));
+        });
+      }
     };
 
     Router.prototype.list = function(list_route, route) {

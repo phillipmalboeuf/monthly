@@ -59,10 +59,13 @@ class Core.Routers.Router extends Backbone.Router
 		$("[data-show-setster]").click (e)->
 			window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
 
-		$("[data-show-resurva]").click (e)->
-			e.preventDefault()
 
-			Core.overlay_view.show e, e.currentTarget.getAttribute("href")
+		if window.location.host == "localhost:5000" or window.location.host == "monthly.destruct.codes"
+			$("[data-show-resurva]").click (e)->
+				e.preventDefault()
+				e.stopImmediatePropagation()
+
+				Core.overlay_view.show e, e.currentTarget.getAttribute("data-show-resurva")
 		
 
 
