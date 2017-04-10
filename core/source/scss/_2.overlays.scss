@@ -6,7 +6,7 @@
 	@extend .grid;
 
 	position: fixed;
-	z-index: 20;
+	z-index: -1;
 
 	overflow-y: auto;
 
@@ -21,6 +21,7 @@
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
+		z-index: 20;
 
 		@include transition(opacity $fast, visibility 0s);
 	}
