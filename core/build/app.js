@@ -1532,14 +1532,11 @@
     };
 
     Router.prototype.index = function() {
-      $("[data-show-setster]").click(function(e) {
-        return window['setster_' + e.currentTarget.getAttribute("data-show-setster")].show();
-      });
-      if (window.location.host === "localhost:5000" || window.location.host === "monthly.apps.deming.tech") {
-        return $("[data-show-resurva]").click(function(e) {
+      if (!(window.location.host === "localhost:5000" || window.location.host === "monthly.apps.deming.tech")) {
+        return $("[data-show-setster]").click(function(e) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          return Core.overlay_view.show(e, e.currentTarget.getAttribute("data-show-resurva"));
+          return window['setster_' + e.currentTarget.getAttribute("data-show-setster")].show();
         });
       }
     };
