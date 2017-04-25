@@ -1531,15 +1531,7 @@
       }
     };
 
-    Router.prototype.index = function() {
-      if (!(window.location.host === "localhost:5000" || window.location.host === "monthly.apps.deming.tech")) {
-        return $("[data-show-setster]").click(function(e) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-          return window['setster_' + e.currentTarget.getAttribute("data-show-setster")].show();
-        });
-      }
-    };
+    Router.prototype.index = function() {};
 
     Router.prototype.list = function(list_route, route) {
       return $(".js-post").each((function(_this) {

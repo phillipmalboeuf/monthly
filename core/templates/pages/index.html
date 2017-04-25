@@ -33,7 +33,7 @@
 				<h4 class="flat_bottom"><span data-key="barber_1">{{pieces.reservations.barber_1}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.reservations.barber_1_address}}</span></a></p>
 
-				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_1_setmore_id}}" class="button" data-show-setster="1" data-click-event="downtown">Prendre rendez-vous</a>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_1_setmore_id}}" class="button" data-click-event="downtown">Prendre rendez-vous</a>
 				<div data-hidden-key="barber_1_setmore_id"></div>
 			</div>
 
@@ -49,7 +49,7 @@
 				<h4 class="flat_bottom"><span data-key="barber_3">{{pieces.reservations.barber_3}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.reservations.barber_3_address}}</span></a></p>
 
-				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_3_setmore_id}}" class="button" data-show-setster="2" data-click-event="mileend">Prendre rendez-vous</a>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_3_setmore_id}}" class="button" data-click-event="mileend">Prendre rendez-vous</a>
 				<div data-hidden-key="barber_3_setmore_id"></div>
 			</div>
 
@@ -57,7 +57,7 @@
 				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.reservations.barber_4}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.reservations.barber_4_address}}</span></a></p>
 
-				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_4_setmore_id}}" class="button" data-show-setster="3" data-click-event="laval">Prendre rendez-vous</a>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_4_setmore_id}}" class="button" data-click-event="laval">Prendre rendez-vous</a>
 				<div data-hidden-key="barber_4_setmore_id"></div>
 			</div>
 		</div>
@@ -212,8 +212,7 @@
 
 
 
-<!-- Begin Setster Widget -->
-<script type="text/javascript" charset="utf-8">
+{# <script type="text/javascript" charset="utf-8">
 var is_ssl = ("https:" == document.location.protocol);
 var setsHost = is_ssl ? "https://www.setster.com/widget/" : "http://www.setster.com/widget/";
 document.write(unescape("%3Cscript src='" + setsHost + "js/setster_over.js?v=2' type='text/javascript'%3E%3C/script%3E"));
@@ -255,8 +254,7 @@ setster_3_options.defaultProvider = "{{pieces.reservations.barber_4_providers}}"
 setster_3_options.defaultLocation = "{{pieces.reservations.barber_4_locations}}";
 setster_3_options.setsterURL = setsHost;
 window.setster_3 = new Setster.setster_widget(setster_3_options);
-</script>
-<!-- End Setster Widget -->
+</script> #}
 {% endblock %}
 
 

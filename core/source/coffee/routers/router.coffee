@@ -56,12 +56,12 @@ class Core.Routers.Router extends Backbone.Router
 
 
 	index: ->
-		if !(window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech")
-			$("[data-show-setster]").click (e)->
-				e.preventDefault()
-				e.stopImmediatePropagation()
+		# if !(window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech")
+		# 	$("[data-show-setster]").click (e)->
+		# 		e.preventDefault()
+		# 		e.stopImmediatePropagation()
 
-				window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
+		# 		window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
 
 
 		# if window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech"
