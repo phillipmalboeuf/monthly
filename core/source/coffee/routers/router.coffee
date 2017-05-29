@@ -64,12 +64,12 @@ class Core.Routers.Router extends Backbone.Router
 		# 		window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
 
 
-		# if window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech"
-		# 	$("[data-show-resurva]").click (e)->
-		# 		e.preventDefault()
-		# 		e.stopImmediatePropagation()
+		if window.location.host == "localhost:5000" or window.location.host == "monthly.apps.deming.tech"
+			$("[data-show-resurva]").click (e)->
+				e.preventDefault()
+				e.stopImmediatePropagation()
 
-		# 		Core.overlay_view.show e, e.currentTarget.getAttribute("data-show-resurva")
+				Core.overlay_view.show e, e.currentTarget.getAttribute("data-show-resurva")
 		
 
 

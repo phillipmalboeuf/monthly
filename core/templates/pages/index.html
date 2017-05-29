@@ -41,7 +41,7 @@
 				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.reservations.barber_2}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.reservations.barber_2_address}}</span></a></p>
 
-				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_2_setmore_id}}" class="button" data-click-event="vieux">Prendre rendez-vous</a>
+				<a id="Setmore_button_iframe" href="https://my.setmore.com/bookingpage/{{pieces.reservations.barber_2_setmore_id}}" class="button" data-show-resurva="https://monthlybarber.resurva.com/book?embedded=true" data-click-event="vieux">Prendre rendez-vous</a>
 				<div data-hidden-key="barber_2_setmore_id"></div>
 			</div>
 
@@ -190,13 +190,13 @@
 	<span data-piece-admin></span>
 </section>
 
-{# <div id="overlay" class="overlay overlay--full">
+<div id="overlay" class="overlay overlay--full">
 	<a href="#" class="overlay__back js-hide"></a>
 	<div class="overlay__container">
 		<a href="#" class="overlay__close js-hide">✕</a>
 		<iframe src="" name="resurva-frame" frameborder="0" height="450px" width="100%"></iframe>
 	</div>
-</div> #}
+</div>
 {% endblock %}
 
 
