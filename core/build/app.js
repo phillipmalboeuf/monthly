@@ -1233,9 +1233,13 @@
     };
 
     Slider.prototype.initialize = function() {
+      var today;
       this.slides_count = this.$el.find("[data-slide]").length;
       if (this.el.hasAttribute("data-current-slide")) {
         this.current_slide = parseInt(this.$el.attr("data-current-slide"));
+      } else {
+        today = new Date();
+        this.current_slide = (6 + today.getMonth()) % 13;
       }
       return this.render();
     };

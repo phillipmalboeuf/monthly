@@ -18,6 +18,11 @@ class Core.Views.Slider extends Backbone.View
 		if this.el.hasAttribute("data-current-slide")
 			@current_slide = parseInt this.$el.attr("data-current-slide")
 
+		else
+			today = new Date()
+			@current_slide = (6 + today.getMonth()) % 13
+
+
 		this.render()
 
 		
