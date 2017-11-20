@@ -33,8 +33,8 @@ class Core.Views.Slider extends Backbone.View
 
 		this.$el.find("[data-slider-container]").css "width", @slides_count+"00%"
 		this.$el.find("[data-slide]").css "width", (100/@slides_count)+"%"
-		@previous_slide_height = this.$el.find("[data-slide="+@current_slide+"] [data-slide-content]").height()
-		this.$el.find("[data-slider-container]").css "height", "-="+(this.$el.find("[data-slide="+@current_slide+"]").height() - @previous_slide_height)+"px"
+		# @previous_slide_height = this.$el.find("[data-slide="+@current_slide+"] [data-slide-content]").height()
+		# this.$el.find("[data-slider-container]").css "height", "-="+(this.$el.find("[data-slide="+@current_slide+"]").height() - @previous_slide_height)+"px"
 		this.$el.find("[data-slide]").css "transform", "translateX(-"+@current_slide+"00%)"
 
 		setTimeout =>
@@ -70,10 +70,10 @@ class Core.Views.Slider extends Backbone.View
 		this.$el.find("[data-slide-marker]").removeClass "slider__marker--active"
 		this.$el.find("[data-slide-marker="+@current_slide+"]").addClass "slider__marker--active"
 
-		slide_height = this.$el.find("[data-slide="+@current_slide+"] [data-slide-content]").height()
-		this.$el.find("[data-slider-container]").css "height", "-="+(@previous_slide_height - slide_height)+"px"
+		# slide_height = this.$el.find("[data-slide="+@current_slide+"] [data-slide-content]").height()
+		# this.$el.find("[data-slider-container]").css "height", "-="+(@previous_slide_height - slide_height)+"px"
 
-		@previous_slide_height = slide_height
+		# @previous_slide_height = slide_height
 
 		this.$el.find("[data-slide]").css "transform", "translateX(-"+@current_slide+"00%)"
 

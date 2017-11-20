@@ -18,7 +18,7 @@
 	}
 
 		.slide {
-			visibility: hidden;
+			width: 100%;
 
 			@include transformer($slow);
 			@include translate(0, 0);

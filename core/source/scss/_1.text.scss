@@ -164,6 +164,13 @@ a {
 		border-bottom: 1px solid;
 	}
 
+	&.a--no_line {
+		&:focus,
+		&:hover {
+			border-bottom: none;
+		}
+	}
+
 	&.a--thick_line {
 		&:focus,
 		&:hover {

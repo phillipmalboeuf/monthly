@@ -71,12 +71,52 @@
 	<span data-piece-admin></span>
 </section>
 
+
+<section class="padded padded--very_thick big_bottom grey_back" id="products" data-piece-id="{{pieces.products._id}}">
+	<h3 class="text_center" data-key="title">
+		{{pieces.products.title|safe}}
+	</h3>
+
+	<div class="slider" data-slider data-current-slide=0>
+		<div class="slider__container" data-slider-container>
+			{% for slide in pieces.products.products %}
+			<div class="slide" data-slide={{loop.index0}}>
+				 <div class="padded relative" data-slide-content>
+				 	<h5 class="text_center">{{slide.title}}</h5>
+				 	<div class="grid grid--guttered grid--center grid--bottom">
+				 		{% for product in slide.products %}
+						<div class="col col--4of12 col--tablet_portrait--6of12">
+							<a class="a--alternate a--no_line inline_block relative text_center" href="{{product.link}}">
+								<img src="{{product.image}}">
+								<p class="absolute absolute--bottom hide_on_phone">{{product.title}}</p>
+							</a>
+						</div>
+				 		{% endfor %}
+				 	</div>
+				 </div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+
+	    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+
+	    <div class="slider__markers">
+	    	{% for slide in pieces.products.products %}
+	      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+	      	{% endfor %}
+	    </div>
+	</div>
+</section>
+
+
 <section class="padded padded--thick" id="salons" data-piece-id="{{pieces.salons._id}}">
 	<div class="grid grid--guttered">
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_1}}</h5>
 			<p><a href="{{pieces.reservations.barber_1_address_link}}">{{pieces.reservations.barber_1_address}}</a></p>
-			<figure class="slider" data-slider>
+			<figure class="slider" data-slider data-current-slide=0>
 				<div class="slider__container" data-slider-container data-slides-key="slides_1" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
 					{% for slide in pieces.salons.slides_1 %}
 					<div class="slide" data-slide={{loop.index0}}>
@@ -104,7 +144,7 @@
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
 			<p><a href="{{pieces.reservations.barber_2_address_link}}">{{pieces.reservations.barber_2_address}}</a></p>
-			<figure class="slider" data-slider>
+			<figure class="slider" data-slider data-current-slide=0>
 				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
 					{% for slide in pieces.salons.slides_2 %}
 					<div class="slide" data-slide={{loop.index0}}>
@@ -132,7 +172,7 @@
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_3}}</h5>
 			<p><a href="{{pieces.reservations.barber_3_address_link}}">{{pieces.reservations.barber_3_address}}</a></p>
-			<figure class="slider" data-slider>
+			<figure class="slider" data-slider data-current-slide=0>
 				<div class="slider__container" data-slider-container data-slides-key="slides_3" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
 					{% for slide in pieces.salons.slides_3 %}
 					<div class="slide" data-slide={{loop.index0}}>
@@ -160,7 +200,7 @@
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
 			<p><a href="{{pieces.reservations.barber_4_address_link}}">{{pieces.reservations.barber_4_address}}</a></p>
-			<figure class="slider" data-slider>
+			<figure class="slider" data-slider data-current-slide=0>
 				<div class="slider__container" data-slider-container data-slides-key="slides_4" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
 					{% for slide in pieces.salons.slides_4 %}
 					<div class="slide" data-slide={{loop.index0}}>
