@@ -4,6 +4,7 @@ class Core.Routers.Router extends Backbone.Router
 
 	routes: {
 		# "lists/:list_route(/tags)(/authors)(/posts)(/:route)(/)": "list"
+		"camion": "index"
 		"(/)": "index"
 	}
 
@@ -13,11 +14,10 @@ class Core.Routers.Router extends Backbone.Router
 	initialize: ->
 
 
-
 	execute: (callback, args)->
 
 		for view in @views
-			view.destroy()
+			view.destroy() if view.destroy
 
 		delete @views
 		@views = []
@@ -63,7 +63,6 @@ class Core.Routers.Router extends Backbone.Router
 		# 		e.stopImmediatePropagation()
 
 		# 		window['setster_'+e.currentTarget.getAttribute("data-show-setster")].show()
-
 
 		$("[data-show-resurva]").click (e)->
 			e.preventDefault()

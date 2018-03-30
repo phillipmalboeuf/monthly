@@ -1471,6 +1471,7 @@
     }
 
     Router.prototype.routes = {
+      "camion": "index",
       "(/)": "index"
     };
 
@@ -1483,7 +1484,9 @@
       ref = this.views;
       for (i = 0, len = ref.length; i < len; i++) {
         view = ref[i];
-        view.destroy();
+        if (view.destroy) {
+          view.destroy();
+        }
       }
       delete this.views;
       this.views = [];

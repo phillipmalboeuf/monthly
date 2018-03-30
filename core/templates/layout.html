@@ -50,11 +50,13 @@
                 </div>
 
                 <nav class="grid grid--thick_guttered">
+                    {% block header_links %}
                     <div class="col"><a href="/#reservations" data-scroll-to="reservations" class="nav__link a--thick_line">Réservations</a></div>
                     <div class="col"><a href="/#products" data-scroll-to="products" class="nav__link a--thick_line">Produits</a></div>
                     {# <div class="col"><a href="/#salons" data-scroll-to="salons" class="nav__link a--thick_line">Salons</a></div> #}
-                    {# <div class="col"><a href="/#barbers" data-scroll-to="barbers" class="nav__link a--thick_line">Barbiers</a></div> #}
-                    <div class="col"><a href="/#contact" data-scroll-to="contact" class="nav__link a--thick_line">Contact</a></div>
+                    <div class="col"><a href="/camion" class="nav__link a--thick_line">Camion</a></div>
+                    <div class="col"><a href="#contact" data-scroll-to="contact" class="nav__link a--thick_line">Contact</a></div>
+                    {% endblock %}
 
                     <span data-piece-admin></span>
                 </nav>
@@ -130,7 +132,7 @@
 
 
         <script src="https://cdn.jsdelivr.net/g/jquery@3.0.0-beta1(jquery.min.js),underscorejs@1.8.3,backbonejs@1.2.3,handlebarsjs@4.0.5,to-markdown@1.3.0,marked@0.3.5,velocity@1.2.3" data-turbolinks-eval="false"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.min.js" async></script>
+        {# <script src="//cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.min.js" async></script> #}
 
 
         <script data-turbolinks-eval="false">
