@@ -115,8 +115,6 @@
       }
       data = new FormData();
       data.append("file", file);
-      Turbolinks.controller.adapter.progressBar.setValue(0);
-      Turbolinks.controller.adapter.progressBar.show();
       return $.ajax({
         type: "POST",
         url: Core.settings.api + "_upload",
@@ -128,8 +126,6 @@
           "X-Session-Secret": Core.cookies.get("Session-Secret")
         },
         success: function(response) {
-          Turbolinks.controller.adapter.progressBar.setValue(100);
-          Turbolinks.controller.adapter.progressBar.hide();
           if (options.success != null) {
             return options.success(response);
           }
