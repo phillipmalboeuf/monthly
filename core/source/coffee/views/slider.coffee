@@ -20,7 +20,7 @@ class Core.Views.Slider extends Backbone.View
 
 		else
 			today = new Date()
-			@current_slide = (6 + today.getMonth()) % 13
+			@current_slide = (6 + today.getMonth()) % 12
 
 
 		this.render()

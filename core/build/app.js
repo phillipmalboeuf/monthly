@@ -1235,7 +1235,7 @@
         this.current_slide = parseInt(this.$el.attr("data-current-slide"));
       } else {
         today = new Date();
-        this.current_slide = (6 + today.getMonth()) % 13;
+        this.current_slide = (6 + today.getMonth()) % 12;
       }
       return this.render();
     };
