@@ -34,7 +34,14 @@ button,
 	}
 
 	&.button--black {
+		color: $white;
 		background: $black;
+	}
+
+	&.button--big {
+		font-size: 2rem;
+		padding: $vertical_rythm $vertical_rythm*2;
+		border-width: 2px;
 	}
 
 
