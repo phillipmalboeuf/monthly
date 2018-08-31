@@ -308,6 +308,11 @@ sub {
 	&.image_back--bottom {
 		background-position: center bottom;
 	}
+
+	&.image_back--contain {
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
 }
 
 

@@ -28,35 +28,35 @@
 	<button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
 
 	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.reservations._id}}" id="reservations">
-		<div class="grid grid--guttered">
+		<div class="grid grid--guttered grid--center">
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_1">{{pieces.reservations.barber_1}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_1_address_link}}" data-link-key="barber_1_address_link"><span data-key="barber_1_address">{{pieces.reservations.barber_1_address}}</span></a></p>
 
-				<button data-show-resurva="https://monthlystanley.resurva.com/book?embedded=true" data-click-event="downtown">Prendre rendez-vous</button>
+				<button data-show-resurva="https://online.getsquire.com/book/monthly-barber-stanley-montreal/barber" data-click-event="downtown">Prendre rendez-vous</button>
 			</div>
 
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.reservations.barber_2}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.reservations.barber_2_address}}</span></a></p>
 
-				<button data-show-resurva="https://monthlyduke.resurva.com/book?embedded=true" data-click-event="vieux">Prendre rendez-vous</button>
+				<button data-show-resurva="https://online.getsquire.com/book/monthly-barber-cite-montreal/barber" data-click-event="vieux">Prendre rendez-vous</button>
 			</div>
 
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_3">{{pieces.reservations.barber_3}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_3_address_link}}" data-link-key="barber_3_address_link"><span data-key="barber_3_address">{{pieces.reservations.barber_3_address}}</span></a></p>
 
-				<button data-show-resurva="https://monthlyatelier.resurva.com/book?embedded=true" data-click-event="mileend">Prendre rendez-vous</button>
+				<button data-show-resurva="https://online.getsquire.com/book/monthly-barber-atelier-montreal/barber" data-click-event="mileend">Prendre rendez-vous</button>
 			</div>
 
-			<div class="col col--3of12 col--small--6of12">
+			<!-- <div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.reservations.barber_4}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_4_address_link}}" data-link-key="barber_4_address_link"><span data-key="barber_4_address">{{pieces.reservations.barber_4_address}}</span></a></p>
 
 				<button data-show-resurva="https://monthlycarrefourlaval.resurva.com/book?embedded=true" data-click-event="laval">Prendre rendez-vous</button>
 				<div data-hidden-key="barber_4_setmore_id"></div>
-			</div>
+			</div> -->
 		</div>
 
 		<span data-piece-admin></span>
@@ -79,12 +79,19 @@
 </section>
 
 
-<section class="padded padded--very_thick big_bottom grey_back" id="products" data-piece-id="{{pieces.products._id}}">
-	<h3 class="text_center" data-key="title">
-		{{pieces.products.title|safe}}
-	</h3>
+<section class="padded padded--very_thick big_bottom" id="products" data-piece-id="{{pieces.products._id}}" style="background-color: #dcdcdc;">
+	<div class="padded padded--very_thick image_back image_back--contain" style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{pieces.products.image}});">
+		<h3 class="text_center" data-key="title">
+			{{pieces.products.title|safe}}
+		</h3>
 
-	<div class="slider" data-slider data-current-slide=0>
+		<div class="grid grid--middle padded padded--very_thick image_back">
+			<div class="col col--12of12 text_center"><a class="button" href="https://wisemenscare.com" target="_blank">Browse Wise Products</a></div>
+		</div>
+	</div>
+	
+
+	<!-- <div class="slider" data-slider data-current-slide=0>
 		<div class="slider__container" data-slider-container>
 			{% for slide in pieces.products.products %}
 			<div class="slide" data-slide={{loop.index0}}>
@@ -114,7 +121,7 @@
 	      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 	      	{% endfor %}
 	    </div>
-	</div>
+	</div> -->
 </section>
 
 
@@ -202,7 +209,7 @@
 			</figure>
 		</div>
 
-		<div class="col col--2of12 hide_on_medium"></div>
+		<!-- <div class="col col--2of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
@@ -228,7 +235,7 @@
 			      	{% endfor %}
 			    </div>
 			</figure>
-		</div>
+		</div> -->
 	</div>
 
 	<span data-piece-admin></span>
@@ -238,7 +245,7 @@
 	<a href="#" class="overlay__back js-hide"></a>
 	<div class="overlay__container">
 		<a href="#" class="overlay__close js-hide">✕</a>
-		<iframe src="" name="resurva-frame" frameborder="0" height="450px" width="100%"></iframe>
+		<iframe src="" name="resurva-frame" frameborder="0" height="600px" width="100%"></iframe>
 	</div>
 </div>
 {% endblock %}
