@@ -1,0 +1,51 @@
+
+{% extends "layout.html" %}
+
+{% block body_classes %}camion{% endblock %}
+
+{% block header_links %}
+<div class="col"><a href="/" class="nav__link a--thick_line">Barbershops</a></div>
+<div class="col"><a href="/app" class="nav__link a--thick_line">App</a></div>
+<!-- <div class="col"><a href="/camion" class="nav__link a--thick_line">Camion</a></div> -->
+<div class="col"><a href="#contact" data-scroll-to="contact" class="nav__link a--thick_line">Contact</a></div>
+{% endblock %}
+
+{% block main %}
+
+<section class="slider black_back" data-slider data-current-slide=0>
+	<div data-piece-id="{{pieces.app._id}}">
+		<div class="slider__container" data-slider-container data-slides-key="slides" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/">
+			<div class="slide" data-slide=0>
+				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{pieces.app.slides[0].image}})">
+					<h1 class="col col--12of12 text_center h1--alternate"><span data-slide-title>{{pieces.camion.slides[0].title}}</span><span data-piece-admin></span></h1>
+				</div>
+			</div>
+
+			<span data-slide-admin></span>
+		</div>
+	</div>
+	<div class="slider__markers slider__markers--on_top padded padded--thick" data-piece-id="{{pieces.app._id}}" id="camion">
+		<div class="grid grid--guttered grid--center">
+			<div class="col col--3of12 col--small--6of12">
+				<h4 class=""><span data-key="app">{{pieces.app.app}}</span></h4>
+
+				<a href="https://itunes.apple.com/us/app/monthly-barber/id1418769021" class="button" target="_blank" data-click-event="app_ios">iOS</a> &nbsp;
+        <a href="https://play.google.com/store/apps/details?id=com.getsquire.commander" class="button" target="_blank" data-click-event="app_ios">Android</a>
+			</div>
+		</div>
+
+		<span data-piece-admin></span>
+	</div>
+</section>
+
+
+<section class="padded padded--very_thick text_right" data-piece-id="{{pieces.app._id}}">
+	<h3 data-key="description">
+		{{pieces.app.description|safe}}
+	</h3>
+
+	<span data-piece-admin></span>
+</section>
+{% endblock %}
+
+

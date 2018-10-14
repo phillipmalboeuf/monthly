@@ -1468,6 +1468,7 @@
 
     Router.prototype.routes = {
       "camion": "index",
+      "app": "index",
       "(/)": "index"
     };
 
