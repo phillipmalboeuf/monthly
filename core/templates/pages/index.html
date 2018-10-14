@@ -63,12 +63,10 @@
 	</div>
 </section>
 
-{% if request.url_root != 'https://monthlybarber.com' %}
 <section class="padded padded--thick black_back text_center small_only" >
-	<h5 class="">{{pieces.camion.camion}}</h5>
-	<a class="button" href="/camion">Réservez le camion</a>
+	<h5 class="">{{pieces.app.app}}</h5>
+	<a class="button" href="/app">Télécharger l'application</a>
 </section>
-{% endif %}
 
 <section class="padded padded--very_thick text_right" data-piece-id="{{pieces.metadata._id}}">
 	<h2 data-key="description">
