@@ -1,8 +1,7 @@
 
 from flask import Flask
-from flask.ext.mail import Mail
-from flask.ext.pymongo import PyMongo
-
+from flask_mail import Mail
+from flask_pymongo import PyMongo
 # from celery import Celery
 
 
