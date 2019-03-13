@@ -13,7 +13,7 @@
 		<div class="slider__container" data-slider-container data-slides-key="months" data-slides-cdn="">
 			{% for slide in pieces.index.months %}
 			<div class="slide" data-slide={{loop.index0}}>
-				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url({{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=931&w=1400)">
+				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url({{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=931&w=1400)">
 					<h1 class="col col--12of12 text_center h1--alternate"><span data-slide-title>{{slide.title}}</span><span data-piece-admin></span></h1>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 
 
 <section class="padded padded--very_thick big_bottom" id="products" data-piece-id="{{pieces.products._id}}" style="background-color: #dcdcdc;">
-	<div class="padded padded--very_thick image_back image_back--contain" style="background-image:url({{pieces.products.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=931&w=1400)">
+	<div class="padded padded--very_thick image_back image_back--contain" style="background-image:url({{pieces.products.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=931&w=1400)">
 		<h3 class="text_center" data-key="title">
 			<!-- {{pieces.products.title|safe}} -->
 		</h3>
@@ -132,7 +132,7 @@
 				<div class="slider__container" data-slider-container data-slides-key="slides_1" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_1 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
@@ -160,7 +160,7 @@
 				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_2 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
@@ -188,7 +188,7 @@
 				<div class="slider__container" data-slider-container data-slides-key="slides_3" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_3 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
