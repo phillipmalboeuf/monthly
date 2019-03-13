@@ -10,10 +10,10 @@
 
 <section class="slider black_back" data-slider>
 	<div data-piece-id="{{pieces.index._id}}">
-		<div class="slider__container" data-slider-container data-slides-key="months" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/">
+		<div class="slider__container" data-slider-container data-slides-key="months" data-slides-cdn="">
 			{% for slide in pieces.index.months %}
 			<div class="slide" data-slide={{loop.index0}}>
-				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{slide.image}})">
+				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url({{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=931&w=1400)">
 					<h1 class="col col--12of12 text_center h1--alternate"><span data-slide-title>{{slide.title}}</span><span data-piece-admin></span></h1>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 
 
 <section class="padded padded--very_thick big_bottom" id="products" data-piece-id="{{pieces.products._id}}" style="background-color: #dcdcdc;">
-	<div class="padded padded--very_thick image_back image_back--contain" style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{pieces.products.image}});">
+	<div class="padded padded--very_thick image_back image_back--contain" style="background-image:url({{pieces.products.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=931&w=1400)">
 		<h3 class="text_center" data-key="title">
 			<!-- {{pieces.products.title|safe}} -->
 		</h3>
@@ -129,10 +129,10 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_1}}</h5>
 			<p><a href="{{pieces.reservations.barber_1_address_link}}">{{pieces.reservations.barber_1_address}}</a></p>
 			<figure class="slider" data-slider data-current-slide=0>
-				<div class="slider__container" data-slider-container data-slides-key="slides_1" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
+				<div class="slider__container" data-slider-container data-slides-key="slides_1" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_1 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
@@ -157,10 +157,10 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
 			<p><a href="{{pieces.reservations.barber_2_address_link}}">{{pieces.reservations.barber_2_address}}</a></p>
 			<figure class="slider" data-slider data-current-slide=0>
-				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
+				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_2 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
@@ -185,10 +185,10 @@
 			<h5 class="flat_bottom">{{pieces.reservations.barber_3}}</h5>
 			<p><a href="{{pieces.reservations.barber_3_address_link}}">{{pieces.reservations.barber_3_address}}</a></p>
 			<figure class="slider" data-slider data-current-slide=0>
-				<div class="slider__container" data-slider-container data-slides-key="slides_3" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
+				<div class="slider__container" data-slider-container data-slides-key="slides_3" data-slides-cdn="">
 					{% for slide in pieces.salons.slides_3 %}
 					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/{{slide.image}}"></div>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=500&w=750"></div>
 					</div>
 					{% endfor %}
 
@@ -206,46 +206,10 @@
 			    </div>
 			</figure>
 		</div>
-
-		<!-- <div class="col col--2of12 hide_on_medium"></div>
-
-		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
-			<p><a href="{{pieces.reservations.barber_4_address_link}}">{{pieces.reservations.barber_4_address}}</a></p>
-			<figure class="slider" data-slider data-current-slide=0>
-				<div class="slider__container" data-slider-container data-slides-key="slides_4" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/">
-					{% for slide in pieces.salons.slides_4 %}
-					<div class="slide" data-slide={{loop.index0}}>
-						 <div data-slide-content><img data-slide-image src="https://res.cloudinary.com/deming/image/fetch/q_auto,w_750,h_500/{{slide.image}}"></div>
-					</div>
-					{% endfor %}
-
-					<span data-slide-admin></span>
-				</div>
-
-				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
-
-			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
-
-			    <div class="slider__markers">
-			    	{% for slide in pieces.salons.slides_4 %}
-			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
-			      	{% endfor %}
-			    </div>
-			</figure>
-		</div> -->
 	</div>
 
 	<span data-piece-admin></span>
 </section>
-
-<!-- <div id="overlay" class="overlay overlay--full">
-	<a href="#" class="overlay__back js-hide"></a>
-	<div class="overlay__container">
-		<a href="#" class="overlay__close js-hide">✕</a>
-		<iframe src="" name="resurva-frame" frameborder="0" height="100%" width="100%"></iframe>
-	</div>
-</div> -->
 {% endblock %}
 
 

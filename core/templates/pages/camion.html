@@ -13,9 +13,9 @@
 
 <section class="slider black_back" data-slider data-current-slide=0>
 	<div data-piece-id="{{pieces.index._id}}">
-		<div class="slider__container" data-slider-container data-slides-key="slides" data-slides-cdn="https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/">
+		<div class="slider__container" data-slider-container data-slides-key="slides" data-slides-cdn="">
 			<div class="slide" data-slide=0>
-				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url(https://res.cloudinary.com/deming/image/fetch/c_fill,f_auto,g_auto,h_931,q_auto,w_1400/{{pieces.camion.slides[0].image}})">
+				<div class="grid grid--full_height grid--middle image_back" data-slide-content data-slide-background style="background-image:url({{pieces.camion.slides[0].image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?format=auto,compress&h=931&w=1400)">
 					<h1 class="col col--12of12 text_center h1--alternate"><span data-slide-title>{{pieces.camion.slides[0].title}}</span><span data-piece-admin></span></h1>
 				</div>
 			</div>
