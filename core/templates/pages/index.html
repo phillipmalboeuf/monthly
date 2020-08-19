@@ -36,12 +36,12 @@
 				<a href="https://online.getsquire.com/book/monthly-barber-stanley-montreal/barber" target="_blank" data-click-event="downtown" class="button">Prendre un rendez-vous</a>
 			</div>
 
-			<div class="col col--3of12 col--small--6of12">
+			<!-- <div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_2">{{pieces.reservations.barber_2}}</span></h4>
 				<p><a href="{{pieces.reservations.barber_2_address_link}}" data-link-key="barber_2_address_link"><span data-key="barber_2_address">{{pieces.reservations.barber_2_address}}</span></a></p>
 
 				<a href="https://online.getsquire.com/book/monthly-barber-cite-montreal/barber" target="_blank" data-click-event="vieux" class="button">Prendre un rendez-vous</a>
-			</div>
+			</div> -->
 
 			<div class="col col--3of12 col--small--6of12">
 				<h4 class="flat_bottom"><span data-key="barber_4">{{pieces.reservations.barber_4}}</span></h4>
@@ -153,7 +153,30 @@
 		<div class="col col--2of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
-			<h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
+			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
+			<p><a href="{{pieces.reservations.barber_4_address_link}}">{{pieces.reservations.barber_4_address}}</a></p>
+			<figure class="slider" data-slider data-current-slide=0>
+				<div class="slider__container" data-slider-container data-slides-key="slides_4" data-slides-cdn="">
+					{% for slide in pieces.salons.slides_4 %}
+					<div class="slide" data-slide={{loop.index0}}>
+						 <div data-slide-content><img data-slide-image src="{{slide.image|replace('https://d3hy1swj29dtr7.cloudfront.net/uploads', 'https://saturdays.imgix.net')|replace('https://monthlybarber.com/build', 'https://saturdays.imgix.net')}}?auto=format,compress&h=500&w=750&fit=crop"></div>
+					</div>
+					{% endfor %}
+
+					<span data-slide-admin></span>
+				</div>
+
+				<button class="button--transparent slider__button" data-previous-slide-button><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg><svg class="icon-left icon--small"><use xlink:href="/build/images/icons.svg#icon-left"></use></svg></button>
+
+			    <button class="button--transparent slider__button slider__button--right" data-next-slide-button><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg><svg class="icon-right icon--small"><use xlink:href="/build/images/icons.svg#icon-right"></use></svg></button>
+
+			    <div class="slider__markers">
+			    	{% for slide in pieces.salons.slides_4 %}
+			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
+			      	{% endfor %}
+			    </div>
+			</figure>
+			<!-- <h5 class="flat_bottom">{{pieces.reservations.barber_2}}</h5>
 			<p><a href="{{pieces.reservations.barber_2_address_link}}">{{pieces.reservations.barber_2_address}}</a></p>
 			<figure class="slider" data-slider data-current-slide=0>
 				<div class="slider__container" data-slider-container data-slides-key="slides_2" data-slides-cdn="">
@@ -175,10 +198,10 @@
 			      	<button class="slider__marker {% if loop.first %}slider__marker--active{% endif %}" data-slide-marker={{loop.index0}}>{{loop.index0}}</button>
 			      	{% endfor %}
 			    </div>
-			</figure>
+			</figure> -->
 		</div>
 
-		<div class="col col--5of12 hide_on_medium"></div>
+		<!-- <div class="col col--5of12 hide_on_medium"></div>
 
 		<div class="col col--5of12 col--medium--6of12 col--small--12of12">
 			<h5 class="flat_bottom">{{pieces.reservations.barber_4}}</h5>
@@ -204,7 +227,7 @@
 			      	{% endfor %}
 			    </div>
 			</figure>
-		</div>
+		</div> -->
 
 		<!-- <div class="col col--2of12 hide_on_medium"></div>
 
